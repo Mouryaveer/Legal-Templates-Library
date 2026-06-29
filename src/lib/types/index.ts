@@ -13,6 +13,11 @@ export interface Category {
   created_at: string;
 }
 
+export interface TemplateFAQ {
+  question: string;
+  answer: string;
+}
+
 export interface Template {
   id: string;
   title: string;
@@ -36,7 +41,16 @@ export interface Template {
   seo_description: string;
   created_at: string;
   updated_at: string;
-  tex_file?: string;
+  // Production-grade metadata
+  version: string;
+  template_number: string;
+  revision_date: string;
+  applicable_laws: string[];
+  required_information: string[];
+  estimated_completion_time: string;
+  faqs: TemplateFAQ[];
+  related_template_slugs: string[];
+  page_count: number;
 }
 
 export interface Lead {
