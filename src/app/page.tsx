@@ -1,9 +1,7 @@
 import { HeroSection } from "@/components/home/hero";
 import { FeaturedTemplates } from "@/components/home/featured-templates";
 import { CategoriesGrid } from "@/components/home/categories-grid";
-import { StatsSection } from "@/components/home/stats-section";
 import { BenefitsSection } from "@/components/home/benefits";
-import { HowItWorks } from "@/components/home/how-it-works";
 import { FAQSection } from "@/components/home/faq";
 import { CTASection } from "@/components/home/cta-section";
 import { generateFAQSchema } from "@/lib/constants/seo";
@@ -31,9 +29,7 @@ export default function HomePage() {
       <HeroSection />
       <FeaturedTemplates />
       <CategoriesGrid />
-      <StatsSection />
       <BenefitsSection />
-      <HowItWorks />
       <FAQSection faqs={faqs} />
       <CTASection />
     </>

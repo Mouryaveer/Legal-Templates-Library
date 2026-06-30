@@ -57,14 +57,16 @@ export function BenefitsSection() {
             const Icon = benefit.icon;
             return (
               <StaggerItem key={benefit.title}>
-                <div className="group relative overflow-hidden rounded-2xl border border-[#E8E4DC] bg-white p-8 transition-all duration-300 hover:border-[#C89A4B]/40 hover:shadow-[0_8px_30px_rgba(200,154,75,0.06)]">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FBF7F0] to-[#F0EBE1] flex items-center justify-center mb-6 group-hover:from-[#C89A4B]/10 group-hover:to-[#C89A4B]/5 transition-all duration-300">
-                    <Icon className="w-6 h-6 text-[#C89A4B]" />
+                <div className="group relative overflow-hidden rounded-2xl border border-[#E8E4DC] bg-white p-4 md:p-8 transition-all duration-300 hover:border-[#C89A4B]/40 hover:shadow-[0_8px_30px_rgba(200,154,75,0.06)]">
+                  <div className="flex items-start gap-3 md:block mb-4 md:mb-6">
+                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-gradient-to-br from-[#FBF7F0] to-[#F0EBE1] flex items-center justify-center shrink-0 group-hover:from-[#C89A4B]/10 group-hover:to-[#C89A4B]/5 transition-all duration-300">
+                      <Icon className="w-5 h-5 md:w-6 md:h-6 text-[#C89A4B]" />
+                    </div>
+                    <h3 className="text-base md:text-lg font-semibold text-[#111] group-hover:text-[#C89A4B] transition-colors duration-300">
+                      {benefit.title}
+                    </h3>
                   </div>
-                  <h3 className="text-lg font-semibold text-[#111] mb-3 group-hover:text-[#C89A4B] transition-colors duration-300">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-sm text-[#666] leading-relaxed">
+                  <p className="text-xs md:text-sm text-[#666] leading-relaxed">
                     {benefit.description}
                   </p>
                   

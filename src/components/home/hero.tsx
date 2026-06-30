@@ -3,10 +3,18 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { Search, ArrowRight, Sparkles } from "lucide-react";
+import { Search, ArrowRight, Sparkles, FileText, Download, FolderOpen, Star } from "lucide-react";
 import { ParticleBackground } from "./particles";
+import { AnimatedCounter } from "@/components/shared/animated-counter";
 
 const popularSearches = ["NDA", "Employment Contract", "Privacy Policy", "Lease Agreement", "Invoice"];
+
+const stats = [
+  { icon: FileText, value: 500, suffix: "+", label: "Legal Templates", color: "#C89A4B" },
+  { icon: Download, value: 50000, suffix: "+", label: "Downloads", color: "#A67D3D" },
+  { icon: FolderOpen, value: 12, suffix: "", label: "Categories", color: "#D4AD6A" },
+  { icon: Star, value: 99, suffix: "%", label: "Satisfaction Rate", color: "#C89A4B" },
+];
 
 export function HeroSection() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -36,9 +44,9 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-[#FBF7F0] border border-[#E8D5B0] text-sm text-[#A67D3D]"
+          className="inline-flex items-center gap-1.5 px-3 py-1 mb-6 sm:mb-8 rounded-full bg-[#FBF7F0] border border-[#E8D5B0] text-xs sm:text-sm text-[#A67D3D]"
         >
-          <Sparkles className="w-3.5 h-3.5" />
+          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
           <span className="font-medium">500+ Professionally Drafted Templates</span>
         </motion.div>
 
@@ -98,7 +106,7 @@ export function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.55 }}
-          className="flex flex-wrap items-center justify-center gap-2"
+          className="flex flex-wrap items-center justify-center gap-2 mb-8"
         >
           <span className="text-xs text-[#AAA] mr-1">Popular:</span>
           {popularSearches.map((term) => (
@@ -110,6 +118,29 @@ export function HeroSection() {
               {term}
             </button>
           ))}
+        </motion.div>
+
+        {/* Stats Row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.65 }}
+          className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 pt-8 border-t border-[#E8E4DC]/50"
+        >
+          {stats.map((stat, i) => {
+            const Icon = stat.icon;
+            return (
+              <div key={stat.label} className="text-center">
+                <div className="flex items-center justify-center gap-2 mb-1">
+                  <Icon className="w-4 h-4" style={{ color: stat.color }} />
+                  <span className="text-xl sm:text-2xl font-bold text-[#111]">
+                    <AnimatedCounter end={stat.value} suffix={stat.suffix} duration={2} />
+                  </span>
+                </div>
+                <p className="text-[10px] sm:text-xs text-[#888] font-medium">{stat.label}</p>
+              </div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
