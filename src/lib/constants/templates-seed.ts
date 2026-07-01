@@ -52,7 +52,7 @@ export const SEED_TEMPLATES: SeedTemplate[] = [
     ],
     estimated_completion_time: "10 minutes",
     page_count: 8,
-    related_template_slugs: ["ip-agreement-template", "co-founder-agreement", "partnership-agreement"],
+    related_template_slugs: ["ip-agreement-template", "co-founder-agreement"],
     faqs: [
       {
         question: "What is the difference between a mutual and unilateral NDA?",
@@ -61,64 +61,6 @@ export const SEED_TEMPLATES: SeedTemplate[] = [
       {
         question: "How long should the confidentiality obligation last?",
         answer: "Typically, NDA terms range between 2 to 5 years from the date of disclosure. Trade secrets can be protected indefinitely or until they enter the public domain through no fault of the receiving party."
-      },
-      {
-        question: "Can I use this template outside of India?",
-        answer: "This template is governed by Indian law by default (Indian Contract Act, 1872). However, the jurisdiction clause is fully customizable, and the core confidentiality clauses are based on international standard drafting principles."
-      }
-    ]
-  },
-  {
-    title: "Service Contract Agreement",
-    slug: "contract-template",
-    category_slug: "business",
-    description: "A comprehensive service contract detailing the scope of deliverables, payment milestones, and standard commercial provisions.",
-    purpose: "To formalize service-based engagements, establishing clear expectations for deliverables and payment terms.",
-    who_should_use: "Freelancers, independent agencies, consulting service providers, and business clients.",
-    when_to_use: "Prior to launching a paid project or contracting vendor services.",
-    benefits: [
-      "Secures payment terms and milestones",
-      "Mitigates scope creep with strict scopes",
-      "Clearly defines termination options",
-      "Fully editable LaTeX/DOCX format"
-    ],
-    key_clauses: [
-      "Scope of Services & Deliverables",
-      "Payment & Retainer Schedules",
-      "Independent Contractor Status",
-      "Intellectual Property rights",
-      "Limitation of Liability",
-      "Termination & Exit conditions"
-    ],
-    tags: ["Service Contract", "Business", "Vendor", "Agreement"],
-    download_count: 3824,
-    estimated_reading_time: 12,
-    is_featured: true,
-    is_published: true,
-    seo_title: "Service Contract Agreement Template | Turn2Law",
-    seo_description: "Get a legally-compliant Service Contract Agreement template. Customize scope of work, payment schedules, and liability caps.",
-    version: "2.0",
-    template_number: "T2L-SVC-001",
-    revision_date: "June 2026",
-    applicable_laws: ["Indian Contract Act, 1872", "Sale of Goods Act, 1930"],
-    required_information: [
-      "Names and addresses of the Service Provider and Client",
-      "Detailed description of services and deliverables (Scope of Work)",
-      "Payment schedules, milestones, and invoicing terms",
-      "Ownership details of intellectual property created during the project",
-      "Notice periods for termination"
-    ],
-    estimated_completion_time: "15 minutes",
-    page_count: 10,
-    related_template_slugs: ["nda-template", "ip-agreement-template", "partnership-agreement"],
-    faqs: [
-      {
-        question: "Who owns the Intellectual Property created under this agreement?",
-        answer: "By default, our template allocates ownership of all new deliverables and work product to the Client upon full payment of the applicable fees. Pre-existing intellectual property remains the property of the respective party."
-      },
-      {
-        question: "How do I handle changes to the scope of work?",
-        answer: "This agreement contains a strict 'Change Order' clause. Any alterations to the deliverables, timelines, or fees must be documented in writing and signed by both parties before the extra work begins."
       }
     ]
   },
@@ -150,182 +92,73 @@ export const SEED_TEMPLATES: SeedTemplate[] = [
     is_featured: true,
     is_published: true,
     seo_title: "Intellectual Property (IP) Assignment Agreement | Turn2Law",
-    seo_description: "Democratize startup protection. Download our IP Assignment Agreement template to secure software, algorithms, and brand assets.",
+    seo_description: "Consolidate all code, design assets, and patents inside your company. Download our professional IP assignment template.",
     version: "2.0",
     template_number: "T2L-IP-001",
     revision_date: "June 2026",
-    applicable_laws: ["Copyright Act, 1957", "Patents Act, 1970", "Designs Act, 2000"],
+    applicable_laws: ["Copyright Act, 1957", "Patents Act, 1970"],
     required_information: [
-      "Names and addresses of the Assignor and Assignee",
-      "Detailed description of the intellectual property being assigned",
-      "Details of any pre-existing intellectual property to be excluded",
-      "Description of consideration (compensation) for the assignment"
-    ],
-    estimated_completion_time: "10 minutes",
-    page_count: 7,
-    related_template_slugs: ["nda-template", "co-founder-agreement", "offer-letter-template"],
-    faqs: [
-      {
-        question: "What is a 'Moral Rights' waiver?",
-        answer: "Moral rights include the right to be recognized as the author (attribution) and to protect the work from mutilation. A moral rights waiver ensures the company can modify the code, designs, or assets without legal objections from the original creator."
-      },
-      {
-        question: "Do I need to register the assignment?",
-        answer: "While registration is not strictly required to make the contract binding between the parties, registering the assignment with the Copyright Office or Patent Office provides strong public notice and is recommended for major IP assets."
-      }
-    ]
-  },
-  {
-    title: "Memorandum of Understanding (MOU)",
-    slug: "mou-template",
-    category_slug: "legal",
-    description: "A bilateral Memorandum of Understanding to document general cooperation agreements, partnership intent, and project parameters.",
-    purpose: "To express interest in collaborative projects and establish mutual operational parameters before writing formal agreements.",
-    who_should_use: "Strategic partners, co-marketing firms, or cross-company development initiatives.",
-    when_to_use: "When initiating high-level discussions or joint ventures before drafting priced agreements.",
-    benefits: [
-      "Drafts non-binding intent clearly",
-      "Easy framework for cross-team coordination",
-      "Establishes confidentiality benchmarks",
-      "Saves cost of pre-deal drafting"
-    ],
-    key_clauses: [
-      "Purpose and Intent of Collaboration",
-      "Scope of Work Sharing",
-      "Joint Coordination Committee",
-      "Confidentiality & Information Flow",
-      "Non-binding Nature of agreement",
-      "Governing Law & Dispute pathways"
-    ],
-    tags: ["MOU", "Partnership", "Collaboration", "Legal"],
-    download_count: 4120,
-    estimated_reading_time: 9,
-    is_featured: true,
-    is_published: true,
-    seo_title: "Memorandum of Understanding (MOU) Template | Turn2Law",
-    seo_description: "Download a professional Memorandum of Understanding template to outline mutual cooperation and partnership frameworks.",
-    version: "2.0",
-    template_number: "T2L-LEG-002",
-    revision_date: "June 2026",
-    applicable_laws: ["Indian Contract Act, 1872"],
-    required_information: [
-      "Names and addresses of the collaborating parties",
-      "Detailed statement of collaboration objectives",
-      "Specific responsibilities allocated to each party",
-      "Description of the Joint Steering Committee representation (if any)",
-      "Initial duration (Term) of the MOU"
+      "Names and addresses of the Assignor (Creator) and Assignee (Company)",
+      "Clear description of the software or technology being assigned",
+      "Effective date of the assignment",
+      "Details of compensation or consideration paid for the assignment"
     ],
     estimated_completion_time: "10 minutes",
     page_count: 6,
-    related_template_slugs: ["nda-template", "partnership-agreement", "contract-template"],
+    related_template_slugs: ["nda-template", "co-founder-agreement", "employment-agreement-equity-vesting"],
     faqs: [
       {
-        question: "Is an MOU legally binding?",
-        answer: "Generally, MOUs are intended to be non-binding statements of intent. However, specific clauses like Confidentiality, Intellectual Property ownership, and Dispute Resolution are explicitly written as legally binding in this template."
-      },
-      {
-        question: "What happens if we decide not to proceed after signing an MOU?",
-        answer: "Since the core project covenants are non-binding, either party can terminate the MOU with written notice without liability, except for breaches of the binding confidentiality or intellectual property clauses."
+        question: "Why does a startup need IP assignment agreements?",
+        answer: "By default, the copyright in a creative work (like code or design) belongs to the creator. To ensure the startup owns its codebase and product, all founders, employees, and contractors must assign their IP rights to the company."
       }
     ]
   },
   {
-    title: "Employment Offer Letter",
+    title: "Internship Offer Letter",
     slug: "offer-letter-template",
     category_slug: "employment",
-    description: "A formal employment offer letter detailing salaries, benefits, joining parameters, and basic compliance rules.",
-    purpose: "To communicate employment offers to selected candidates in a professional, structured manner.",
-    who_should_use: "HR managers, startup recruiters, and hiring managers.",
-    when_to_use: "Once a candidate passes interview evaluations and terms have been verbally aligned.",
+    description: "A standard legal offer letter for onboarding law interns, outlining remote work parameters, duration, and key responsibilities.",
+    purpose: "To formally offer an internship to a prospective candidate, clarifying roles, responsibilities, stipends, and confidentiality requirements.",
+    who_should_use: "Law firms, legal startups, or corporate legal departments hiring legal interns.",
+    when_to_use: "Upon selecting an internship candidate and before they begin their official internship period.",
     benefits: [
-      "Professional candidates presentation",
-      "Outlines salary and reporting structures",
-      "Minimizes misunderstandings on onboarding",
-      "Fully adaptable company brand parameters"
+      "Clear role and location terms",
+      "Outlines internship duration and type",
+      "Includes non-solicitation rules",
+      "Protects confidential information"
     ],
     key_clauses: [
-      "Position and Core Responsibilities",
-      "Start Date & Onboarding schedule",
-      "Compensation, Salary & Bonus structures",
-      "Background verification contingencies",
-      "Acceptance Deadline & Response method"
+      "Position details & location",
+      "Duration & type (Unpaid)",
+      "Key responsibilities & research work",
+      "Confidentiality obligations",
+      "Termination of internship",
+      "Ownership of work product"
     ],
-    tags: ["Offer Letter", "Employment", "Hiring", "HR"],
-    download_count: 6184,
-    estimated_reading_time: 6,
-    is_featured: true,
-    is_published: true,
-    seo_title: "Employment Offer Letter Template | Turn2Law",
-    seo_description: "Onboard candidates with authority. Download our official Turn2Law Offer Letter template. Customizable compensation and reporting parameters.",
-    version: "2.0",
-    template_number: "T2L-EMP-001",
-    revision_date: "June 2026",
-    applicable_laws: ["Industrial Disputes Act, 1947", "Shops and Establishments Act"],
-    required_information: [
-      "Candidate's full name and address",
-      "Job title, department, and reporting manager",
-      "Annual gross salary (CTC) and detailed breakdown of components",
-      "Proposed start date and work location",
-      "Probation period and notice period terms"
-    ],
-    estimated_completion_time: "8 minutes",
-    page_count: 5,
-    related_template_slugs: ["onboarding-template", "nda-template", "ip-agreement-template"],
-    faqs: [
-      {
-        question: "Is an offer letter a binding employment contract?",
-        answer: "An offer letter is an invitation to work under specified terms. Once signed by the candidate, it forms a binding agreement. It is usually followed by a detailed Employment Agreement on or before the joining date."
-      },
-      {
-        question: "How do I handle salary breakdowns for compliance?",
-        answer: "The offer letter includes Annexure B which provides standard breakdowns for basic salary, HRA, special allowances, and statutory employer contributions (e.g. EPF) to align with Indian tax structures."
-      }
-    ]
-  },
-  {
-    title: "Official Onboarding Letter",
-    slug: "onboarding-template",
-    category_slug: "hr",
-    description: "An official joining and welcome confirmation letter given to employees upon their formal entry to the company.",
-    purpose: "To legally verify the employee's onboarding status, role, and entry date for compliance records.",
-    who_should_use: "HR operations teams, company secretaries, and startup operations managers.",
-    when_to_use: "On the employee's first official working day during induction.",
-    benefits: [
-      "Confirms official employment status",
-      "Simplifies onboarding administration",
-      "Establishes role compliance baselines",
-      "Features Turn2Law standard welcome design"
-    ],
-    key_clauses: [
-      "Emp ID and Welcome confirmation",
-      "Role & Department definition",
-      "Joining Date & Location parameters",
-      "Compliance policies acknowledgment"
-    ],
-    tags: ["Onboarding", "HR", "Joining Letter", "Welcome"],
-    download_count: 2450,
+    tags: ["Internship", "Offer Letter", "Employment", "HR"],
+    download_count: 1450,
     estimated_reading_time: 5,
-    is_featured: true,
+    is_featured: false,
     is_published: true,
-    seo_title: "Official Employee Onboarding Letter Template | Turn2Law",
-    seo_description: "Get a professional Employee Onboarding Letter template. Document Employee ID, official start dates, and role descriptions.",
-    version: "2.0",
-    template_number: "T2L-HR-001",
+    seo_title: "Internship Offer Letter Template | Turn2Law",
+    seo_description: "Get a professional Internship Offer Letter template. Clear terms for roles, remote location, duration, and IP protection.",
+    version: "1.0",
+    template_number: "T2L-HR-002",
     revision_date: "June 2026",
-    applicable_laws: ["Shops and Establishments Act"],
+    applicable_laws: ["Indian Contract Act, 1872"],
     required_information: [
-      "Employee Name and Employee ID",
-      "Designation, Department, and Reporting Manager",
-      "Official joining date and work location",
-      "List of pending documents to be submitted by the employee"
+      "Candidate name and contact details",
+      "Internship start date and duration",
+      "Specific role and location details",
+      "Key tasks and reporting managers"
     ],
     estimated_completion_time: "5 minutes",
     page_count: 4,
-    related_template_slugs: ["offer-letter-template", "nda-template"],
+    related_template_slugs: ["nda-template", "employment-agreement-equity-vesting"],
     faqs: [
       {
-        question: "What is the purpose of an onboarding letter compared to an offer letter?",
-        answer: "The offer letter is sent during selection. The onboarding letter is handed out on the first day of work to confirm that the employee has officially joined, received their employee ID, and started their induction process."
+        question: "Can an unpaid internship be legally binding?",
+        answer: "Yes, an internship offer letter sets out the terms of engagement (including learning objectives, work hours, and confidentiality). While unpaid, it binds the intern to respect the company's IP and confidentiality."
       }
     ]
   },
@@ -337,12 +170,26 @@ export const SEED_TEMPLATES: SeedTemplate[] = [
     purpose: "To formalize the relationship between co-founders of a startup, preventing future disputes by clearly defining each founder's contributions, equity ownership, and responsibilities from day one.",
     who_should_use: "Startup co-founders who are beginning a new venture together and want to establish clear terms before building their company.",
     when_to_use: "At the inception of a startup, ideally before any significant work, investment, or intellectual property is created.",
-    benefits: ["Prevents equity disputes", "Defines roles clearly", "Includes vesting schedules", "Covers IP assignment", "Handles departure scenarios"],
-    key_clauses: ["Equity Split & Vesting", "Role Definitions", "Decision-Making Authority", "IP Assignment", "Non-Compete & Non-Solicitation", "Departure & Buyback", "Dispute Resolution"],
+    benefits: [
+      "Prevents equity disputes",
+      "Defines roles clearly",
+      "Includes vesting schedules",
+      "Covers IP assignment",
+      "Handles departure scenarios"
+    ],
+    key_clauses: [
+      "Equity Split & Vesting",
+      "Role Definitions",
+      "Decision-Making Authority",
+      "IP Assignment",
+      "Non-Compete & Non-Solicitation",
+      "Departure & Buyback",
+      "Dispute Resolution"
+    ],
     tags: ["startup", "founders", "equity", "vesting"],
     download_count: 1847,
     estimated_reading_time: 15,
-    is_featured: false,
+    is_featured: true,
     is_published: true,
     seo_title: "Co-Founder Agreement Template | Free Download | Turn2Law",
     seo_description: "Download a professionally drafted Co-Founder Agreement template. Covers equity splits, vesting schedules, roles, and IP assignment for startup founders.",
@@ -360,7 +207,7 @@ export const SEED_TEMPLATES: SeedTemplate[] = [
     ],
     estimated_completion_time: "20 minutes",
     page_count: 12,
-    related_template_slugs: ["safe-note-agreement", "ip-agreement-template", "nda-template"],
+    related_template_slugs: ["co-founder-exit-agreement", "ip-agreement-template", "nda-template"],
     faqs: [
       {
         question: "Why do co-founders need a vesting schedule?",
@@ -373,201 +220,110 @@ export const SEED_TEMPLATES: SeedTemplate[] = [
     ]
   },
   {
-    title: "SAFE Note Agreement",
-    slug: "safe-note-agreement",
+    title: "Employment Agreement with Equity Vesting",
+    slug: "employment-agreement-equity-vesting",
+    category_slug: "employment",
+    description: "A comprehensive employment contract combining base remuneration with equity compensation (ESOPs), vesting schedules, non-solicitation, and standard service rules.",
+    purpose: "To formalize the employment relationship while aligning the employee's incentives with the company's long-term growth through structured stock options.",
+    who_should_use: "Startups and scale-ups hiring key team members, managers, or senior executives where equity is part of the compensation package.",
+    when_to_use: "Prior to onboarding any employee who will receive stock options or equity grants as part of their remuneration.",
+    benefits: [
+      "Secures IP rights and assignment",
+      "Clear vesting and cliff schedules",
+      "Aligns founder/employee incentives",
+      "Includes non-solicitation terms"
+    ],
+    key_clauses: [
+      "Cost to Company (CTC) & fixed pay",
+      "Employee Stock Option Plan (ESOP)",
+      "Probation & working hours",
+      "Confidentiality & non-solicitation",
+      "Transfer & location rules",
+      "Tag-along rights & ROFR"
+    ],
+    tags: ["Employment", "Equity", "Vesting", "ESOP", "HR"],
+    download_count: 1240,
+    estimated_reading_time: 12,
+    is_featured: true,
+    is_published: true,
+    seo_title: "Employment Agreement with Equity Vesting Template | Turn2Law",
+    seo_description: "Download our Employment Agreement with Equity Vesting. Protect your startup with standard terms for base salary, ESOP vesting, cliffs, and IP protection.",
+    version: "1.0",
+    template_number: "T2L-EMP-002",
+    revision_date: "June 2026",
+    applicable_laws: ["Indian Contract Act, 1872", "Companies Act, 2013", "Shops and Establishments Act"],
+    required_information: [
+      "Names and addresses of the Company and the Employee",
+      "Job title, department, and probation duration",
+      "Remuneration details (fixed base salary and variable incentives)",
+      "ESOP percentage grant, vesting duration, and cliff details",
+      "Notice periods for termination by either party"
+    ],
+    estimated_completion_time: "15 minutes",
+    page_count: 8,
+    related_template_slugs: ["offer-letter-template", "nda-template", "co-founder-agreement"],
+    faqs: [
+      {
+        question: "What is the standard vesting schedule for employee equity?",
+        answer: "The standard vesting schedule is 4 years with a 1-year cliff. This means no options vest during the first year, and 25% vest on the first anniversary of joining, followed by monthly or quarterly vesting for the remaining 3 years."
+      },
+      {
+        question: "What happens to vested options if an employee resigns?",
+        answer: "Generally, unvested options are forfeited immediately. Vested options must be exercised within a limited window (typically 30 to 90 days) after the termination date, or they will lapse."
+      }
+    ]
+  },
+  {
+    title: "Co-Founder Exit Agreement",
+    slug: "co-founder-exit-agreement",
     category_slug: "startup",
-    description: "A Simple Agreement for Future Equity (SAFE) document based on Y Combinator's standard, adapted for Indian startups with appropriate legal references.",
-    purpose: "To provide a simple, fast mechanism for early-stage startups to raise capital without the complexity of a priced round.",
-    who_should_use: "Early-stage startups raising pre-seed or seed funding from angel investors or micro-VCs.",
-    when_to_use: "During early fundraising rounds when a full priced equity round would be premature or too costly.",
-    benefits: ["Simple and fast", "No valuation needed upfront", "Investor-friendly terms", "Standard market document", "Reduces legal costs"],
-    key_clauses: ["Investment Amount", "Valuation Cap", "Discount Rate", "Conversion Events", "Pro-Rata Rights", "Most Favored Nation"],
-    tags: ["startup", "fundraising", "investment", "SAFE"],
-    download_count: 1234,
+    description: "A legally binding settlement agreement for the voluntary exit of a co-founder, detailing share transfer, relinquishment of rights, confidentiality, and release of claims.",
+    purpose: "To formalize a co-founder's departure from the company, ensuring an orderly transition, relinquishment of shareholding, and avoiding future disputes.",
+    who_should_use: "Startup founders when one of the co-founders is leaving the venture.",
+    when_to_use: "When a co-founder decides to exit the company and all parties agree to settle outstanding rights, liabilities, and share transfers.",
+    benefits: [
+      "Clear share transfer ratios",
+      "Protects company IP and assets",
+      "Mutual release of past claims",
+      "Non-solicitation and non-disparagement"
+    ],
+    key_clauses: [
+      "Resignation from positions",
+      "Share transfer & price",
+      "Full & final settlement",
+      "Confidentiality & IP assignment",
+      "Non-solicitation & non-disparagement",
+      "Liquidated damages for breach"
+    ],
+    tags: ["Exit", "Departure", "Share Transfer", "Settlement", "Co-Founder"],
+    download_count: 840,
     estimated_reading_time: 10,
     is_featured: false,
     is_published: true,
-    seo_title: "SAFE Note Agreement Template | Startup Fundraising | Turn2Law",
-    seo_description: "Download a Y Combinator-style SAFE Note Agreement template adapted for Indian startups. Simple, fast fundraising without priced rounds.",
-    version: "2.0",
-    template_number: "T2L-STR-002",
+    seo_title: "Co-Founder Exit Agreement Template | Turn2Law",
+    seo_description: "Download a professionally drafted Co-Founder Exit Agreement template. Covers resignation, share transfer, confidentiality, IP assignment, and mutual release.",
+    version: "1.0",
+    template_number: "T2L-STR-003",
     revision_date: "June 2026",
-    applicable_laws: ["Companies Act, 2013", "FEMA regulations (for foreign investors)"],
+    applicable_laws: ["Companies Act, 2013", "Indian Contract Act, 1872"],
     required_information: [
-      "Company legal name and registration details",
-      "Investor's full name and address",
-      "Purchase Amount (Investment size)",
-      "Valuation Cap and Discount Rate",
+      "Company details and names of exiting and continuing co-founders",
+      "Date of exit and cessation of association",
+      "Details of share transfer (number of shares, transfer price, new allocation)",
+      "Handover of assets and access credentials",
       "Governing law and dispute resolution details"
     ],
-    estimated_completion_time: "10 minutes",
+    estimated_completion_time: "15 minutes",
     page_count: 6,
     related_template_slugs: ["co-founder-agreement", "nda-template"],
     faqs: [
       {
-        question: "How does a SAFE Note convert to shares?",
-        answer: "A SAFE Note converts into preferred stock when the company raises a priced round of funding (the 'Equity Financing'). The conversion price is based on the Valuation Cap or the Discount Rate, whichever is more favourable to the investor."
+        question: "How are shares redistributed upon a co-founder's exit?",
+        answer: "Typically, the exiting founder transfers their shares to the continuing founders in an agreed-upon ratio, or the company buys back the shares (subject to regulatory limits). This agreement details transfer of shares to continuing founders."
       },
       {
-        question: "Is a SAFE Note a debt instrument?",
-        answer: "No, a SAFE is not debt. There is no maturity date, and it does not accrue interest. It is a contractual right to future equity."
-      }
-    ]
-  },
-  {
-    title: "Partnership Agreement",
-    slug: "partnership-agreement",
-    category_slug: "business",
-    description: "A detailed partnership agreement establishing the terms of a business partnership including profit sharing, management responsibilities, and dissolution procedures.",
-    purpose: "To create a formal framework for a business partnership that protects all partners and establishes clear operating procedures.",
-    who_should_use: "Business partners starting or formalizing a partnership venture.",
-    when_to_use: "When two or more parties decide to enter into a business partnership.",
-    benefits: ["Clear profit sharing", "Defined responsibilities", "Dispute mechanisms", "Exit provisions", "Capital contribution terms"],
-    key_clauses: ["Capital Contributions", "Profit & Loss Sharing", "Management Duties", "Decision Making", "New Partners", "Withdrawal", "Dissolution"],
-    tags: ["business", "partnership", "agreement"],
-    download_count: 1567,
-    estimated_reading_time: 18,
-    is_featured: false,
-    is_published: true,
-    seo_title: "Partnership Agreement Template | Free Download | Turn2Law",
-    seo_description: "Download a comprehensive partnership agreement template covering profit sharing, responsibilities, and dissolution procedures.",
-    version: "2.0",
-    template_number: "T2L-BUS-002",
-    revision_date: "June 2026",
-    applicable_laws: ["Indian Partnership Act, 1932"],
-    required_information: [
-      "Names and addresses of all partners",
-      "Proposed partnership name (Firm Name) and address",
-      "Initial capital contribution of each partner",
-      "Profit and loss sharing ratio",
-      "Responsibilities and designations of partners",
-      "Bank account operation rules"
-    ],
-    estimated_completion_time: "15 minutes",
-    page_count: 10,
-    related_template_slugs: ["contract-template", "nda-template", "mou-template"],
-    faqs: [
-      {
-        question: "Do I need to register a partnership firm?",
-        answer: "Under Indian law, registration of a partnership firm is optional but highly recommended. Unregistered firms face limitations, such as the inability to file a lawsuit in court against third parties to enforce partnership rights."
-      },
-      {
-        question: "What is a partner's drawing limit?",
-        answer: "A drawing limit is the maximum amount of money a partner can withdraw from the firm's account monthly for personal expenses. Withdrawals are deducted from the partner's capital account balance."
-      }
-    ]
-  },
-  {
-    title: "Terms of Service",
-    slug: "terms-of-service",
-    category_slug: "website",
-    description: "A comprehensive terms of service agreement for websites and web applications covering user rights, limitations of liability, and acceptable use policies.",
-    purpose: "To establish the legal terms governing the use of a website or web application, protecting the business from liability.",
-    who_should_use: "Website owners, SaaS companies, and digital businesses that need legal terms for their platforms.",
-    when_to_use: "Before launching a website or web application that users will access.",
-    benefits: ["Legal protection", "Clear user guidelines", "Liability limitation", "Dispute resolution", "Compliance ready"],
-    key_clauses: ["Acceptance of Terms", "User Accounts", "Acceptable Use", "Intellectual Property", "Limitation of Liability", "Indemnification", "Termination", "Governing Law"],
-    tags: ["website", "terms of service", "SaaS", "legal"],
-    download_count: 3456,
-    estimated_reading_time: 15,
-    is_featured: false,
-    is_published: true,
-    seo_title: "Terms of Service Template | Website Legal | Turn2Law",
-    seo_description: "Download a comprehensive terms of service template for websites and web applications. Covers user rights, liability, and acceptable use.",
-    version: "2.0",
-    template_number: "T2L-WEB-002",
-    revision_date: "June 2026",
-    applicable_laws: ["Information Technology Act, 2000", "Indian Contract Act, 1872"],
-    required_information: [
-      "Company name, website URL, and contact details",
-      "Refund policy rules and timeline",
-      "Governing law jurisdiction",
-      "Minimum age limit for users"
-    ],
-    estimated_completion_time: "10 minutes",
-    page_count: 10,
-    related_template_slugs: ["privacy-policy", "nda-template"],
-    faqs: [
-      {
-        question: "Why does my website need Terms of Service?",
-        answer: "Terms of Service outline the rules users must follow to access your site, protect your intellectual property, limit your liability in case of service downtime, and establish the jurisdiction for resolving disputes."
-      }
-    ]
-  },
-  {
-    title: "Privacy Policy",
-    slug: "privacy-policy",
-    category_slug: "website",
-    description: "A detailed privacy policy compliant with GDPR, CCPA, and Indian data protection laws, covering data collection, usage, storage, and user rights.",
-    purpose: "To inform users about how their personal data is collected, used, stored, and protected by your website or application.",
-    who_should_use: "Any business with a website or app that collects user data, especially those handling personal information.",
-    when_to_use: "Before launching any website or application that collects personal data from users.",
-    benefits: ["GDPR compliant", "Multi-jurisdiction", "Clear data practices", "User rights defined", "Cookie disclosure"],
-    key_clauses: ["Data Collection", "Data Usage", "Data Storage", "Data Sharing", "User Rights", "Cookie Policy", "Data Retention", "Contact Information"],
-    tags: ["website", "privacy", "GDPR", "data protection"],
-    download_count: 4123,
-    estimated_reading_time: 12,
-    is_featured: false,
-    is_published: true,
-    seo_title: "Privacy Policy Template | GDPR Compliant | Turn2Law",
-    seo_description: "Download a GDPR-compliant privacy policy template. Covers data collection, usage, storage, user rights, and cookie disclosures.",
-    version: "2.0",
-    template_number: "T2L-WEB-001",
-    revision_date: "June 2026",
-    applicable_laws: ["Digital Personal Data Protection Act, 2023 (DPDP)", "GDPR (EU)", "CCPA (California)"],
-    required_information: [
-      "Company name, registered address, and email address",
-      "Specific categories of personal data collected",
-      "Contact details of the Data Protection Officer (DPO)"
-    ],
-    estimated_completion_time: "10 minutes",
-    page_count: 8,
-    related_template_slugs: ["terms-of-service", "nda-template"],
-    faqs: [
-      {
-        question: "Is this Privacy Policy compliant with the new Indian DPDP Act?",
-        answer: "Yes, this policy is updated to reflect key terms under the Digital Personal Data Protection Act, 2023 (DPDP) along with GDPR and CCPA requirements, covering user consent, DPO contacts, and data principal rights."
-      }
-    ]
-  },
-  {
-    title: "Residential Rental Agreement",
-    slug: "residential-rental-agreement",
-    category_slug: "real-estate",
-    description: "A standard residential rental agreement for landlords and tenants covering rent, security deposit, maintenance, and house rules.",
-    purpose: "To formalize a residential tenancy with clear terms that protect both landlord and tenant.",
-    who_should_use: "Landlords renting residential properties or tenants seeking formal lease documentation.",
-    when_to_use: "When renting or leasing a residential property such as an apartment, house, or flat.",
-    benefits: ["Clear rent terms", "Security deposit rules", "Maintenance clarity", "Legal protection"],
-    key_clauses: ["Property Details", "Rent Amount", "Security Deposit", "Lease Duration", "Maintenance", "House Rules", "Termination Notice", "Renewal"],
-    tags: ["real estate", "rental", "residential", "tenant"],
-    download_count: 3234,
-    estimated_reading_time: 12,
-    is_featured: false,
-    is_published: true,
-    seo_title: "Residential Rental Agreement Template | Turn2Law",
-    seo_description: "Download a standard residential rental agreement template covering rent, security deposit, maintenance, and house rules for landlords and tenants.",
-    version: "2.0",
-    template_number: "T2L-REA-001",
-    revision_date: "June 2026",
-    applicable_laws: ["Transfer of Property Act, 1882", "State Rent Control Acts"],
-    required_information: [
-      "Names, addresses, and identity proofs (PAN / Aadhaar) of Landlord and Tenant",
-      "Detailed address and inventory details of the leased property",
-      "Monthly rent, security deposit amount, and maintenance charges",
-      "Lease duration and notice period for vacating"
-    ],
-    estimated_completion_time: "12 minutes",
-    page_count: 8,
-    related_template_slugs: ["mou-template", "nda-template"],
-    faqs: [
-      {
-        question: "What is the standard lease term in India?",
-        answer: "Residential rent agreements are commonly drafted for 11 months to avoid mandatory registration and stamp duty under various State Rent Control Acts. However, this template can be customized for longer periods if registered."
-      },
-      {
-        question: "Who is responsible for major structural repairs?",
-        answer: "By default, our template allocates major structural maintenance (plumbing lines, external walls, electrical mains) to the Landlord, and minor day-to-day repairs to the Tenant."
+        question: "What is the purpose of non-disparagement clauses in exit agreements?",
+        answer: "A non-disparagement clause prevents both the exiting founder and the company from making negative comments about each other, protecting the company's brand/goodwill and the individual's professional reputation."
       }
     ]
   }

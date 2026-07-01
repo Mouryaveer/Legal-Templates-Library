@@ -3,6 +3,8 @@ import { getTemplateBySlug } from "@/lib/data/templates";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { generateDocx } from "@/lib/docx/generator";
 import { getTemplateBuilder } from "@/lib/docx/templates";
+import fs from "fs";
+import path from "path";
 
 export async function GET(req: NextRequest) {
   try {
@@ -40,7 +42,28 @@ export async function GET(req: NextRequest) {
       }
     }
 
-    // ── Generate professional DOCX document ──
+    // ── Check if static original DOCX file exists ──
+    const staticFilePath = path.join(process.cwd(), "src", "lib", "docx", "assets", `${template.slug}.docx`);
+    
+    if (fs.existsSync(staticFilePath)) {
+      try {
+        const docxBuffer = fs.readFileSync(staticFilePath);
+        const filename = `${template.slug}.docx`;
+        console.log(`Serving static file: ${filename}`);
+        return new NextResponse(new Uint8Array(docxBuffer), {
+          status: 200,
+          headers: {
+            "Content-Type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "Content-Disposition": `attachment; filename="${filename}"`,
+            "Cache-Control": "no-store, must-revalidate",
+          },
+        });
+      } catch (fileError) {
+        console.error(`Static file reading failed for ${template.slug}, falling back to generator:`, fileError);
+      }
+    }
+
+    // ── Generate professional DOCX document (Fallback) ──
     const builder = getTemplateBuilder(slug);
 
     if (builder) {

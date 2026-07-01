@@ -30,6 +30,7 @@ import {
   AccordionContent
 } from "@/components/ui/accordion";
 import type { Template } from "@/lib/types";
+import { TEMPLATE_PREVIEWS } from "@/lib/data/template-previews";
 
 interface TemplateDetailClientProps {
   template: Template;
@@ -40,6 +41,7 @@ export function TemplateDetailClient({ template, relatedTemplates }: TemplateDet
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activePreviewPage, setActivePreviewPage] = useState(1);
   const previewContainerRef = useRef<HTMLDivElement>(null);
+  const previewData = TEMPLATE_PREVIEWS[template.slug] || TEMPLATE_PREVIEWS["nda-template"];
 
   const handleDownloadClick = () => {
     // Check if email already captured in localStorage
@@ -388,173 +390,196 @@ export function TemplateDetailClient({ template, relatedTemplates }: TemplateDet
                   className="flex-1 bg-[#F5F3EF] overflow-y-auto p-4 space-y-4 relative scroll-smooth"
                 >
                   
-                  {/* PAGE 1: Branded Title Page */}
+                  {/* PAGE 1: Dynamic Content Page 1 */}
                   <div
                     id="preview-page-1"
-                    className="aspect-[1/1.4] w-full bg-white shadow-md border border-[#E8E4DC] p-6 text-center flex flex-col justify-between select-none relative"
+                    className="aspect-[1/1.4] w-full bg-white shadow-md border border-[#E8E4DC] p-6 text-left flex flex-col justify-between select-none text-[7px] text-[#333] leading-relaxed"
                   >
-                    <div className="text-[9px] text-[#C89A4B] font-bold tracking-widest uppercase">
-                      Turn2Law Legal Templates
-                    </div>
-                    
-                    <div className="my-auto space-y-4">
-                      <div className="w-10 h-1 bg-[#C89A4B] mx-auto" />
-                      <h4 className="text-sm font-bold uppercase text-[#111] leading-tight px-2">
-                        {template.title}
-                      </h4>
-                      <p className="text-[9px] text-[#666] tracking-wide">
-                        {template.category?.name} Agreement
-                      </p>
-                      
-                      <div className="pt-6 text-left max-w-[150px] mx-auto space-y-1.5 text-[8px] text-[#555] border-t border-[#FAFAF8]">
-                        <div><strong className="text-[#888]">Template ID:</strong> {template.template_number}</div>
-                        <div><strong className="text-[#888]">Version:</strong> {template.version}</div>
-                        <div><strong className="text-[#888]">Revision Date:</strong> {template.revision_date}</div>
-                        <div><strong className="text-[#888]">Prepared By:</strong> Turn2Law Legal</div>
-                      </div>
+                    <div className="flex justify-between border-b border-[#F0EBE1] pb-1.5 text-[6px] text-[#888] font-semibold shrink-0">
+                      <span>{template.title}</span>
+                      <span>{template.template_number}</span>
                     </div>
 
-                    <div className="border-t border-[#F0EBE1] pt-3">
-                      <span className="text-[7px] text-[#999] uppercase tracking-wider block font-bold mb-1">
-                        CONFIDENTIALITY NOTICE
-                      </span>
-                      <p className="text-[6px] text-[#AAA] leading-normal italic px-2">
-                        CONFIDENTIAL — This document is a template provided by Turn2Law for informational purposes. Consult qualified legal counsel before use.
-                      </p>
+                    <div className="flex-1 py-2 overflow-y-auto space-y-1.5 scrollbar-none">
+                      {previewData.page1.map((para, idx) => {
+                        const trimmed = para.trim();
+                        // Header detection
+                        if (trimmed.length < 80 && (
+                          trimmed === trimmed.toUpperCase() || 
+                          /^\d+\.\s+[A-Z]/.test(trimmed) || 
+                          /^[A-Z\s&,\-\(\):]+$/.test(trimmed) && trimmed.length > 3
+                        )) {
+                          return (
+                            <div key={idx} className="font-bold text-[#111] mt-2 mb-0.5 text-[7.5px] uppercase tracking-wide">
+                              {trimmed}
+                            </div>
+                          );
+                        }
+                        // List item detection
+                        if (/^\([a-z\d]\)\s+/.test(trimmed) || /^-\s+/.test(trimmed) || /^\d+\.\d+\s+/.test(trimmed) || /^[a-z]\.\s+/.test(trimmed)) {
+                          return (
+                            <p key={idx} className="pl-3 mt-0.5 text-[6.5px] text-[#444] leading-normal">
+                              {trimmed}
+                            </p>
+                          );
+                        }
+                        return (
+                          <p key={idx} className="mt-1 text-[6.5px] leading-relaxed text-[#444]">
+                            {trimmed}
+                          </p>
+                        );
+                      })}
+                    </div>
+
+                    <div className="border-t border-[#F0EBE1] pt-1.5 text-center text-[6px] text-[#888] shrink-0">
+                      Page 1 of 4
                     </div>
                   </div>
 
-                  {/* PAGE 2: Parties, Recitals, Definitions */}
+                  {/* PAGE 2: Dynamic Content Page 2 */}
                   <div
                     id="preview-page-2"
                     className="aspect-[1/1.4] w-full bg-white shadow-md border border-[#E8E4DC] p-6 text-left flex flex-col justify-between select-none text-[7px] text-[#333] leading-relaxed"
                   >
-                    <div className="flex justify-between border-b border-[#F0EBE1] pb-1.5 text-[6px] text-[#888] font-semibold">
+                    <div className="flex justify-between border-b border-[#F0EBE1] pb-1.5 text-[6px] text-[#888] font-semibold shrink-0">
                       <span>{template.title}</span>
-                      <span>T2L-001</span>
+                      <span>{template.template_number}</span>
                     </div>
 
-                    <div className="flex-1 py-3 space-y-3">
-                      <div>
-                        <div className="font-bold text-[#111] mb-1 text-[8px]">PARTIES</div>
-                        <p>
-                          This Agreement is entered into as of <strong>{"{{Effective_Date}}"}</strong> by and between:
-                        </p>
-                        <p className="mt-1">
-                          <strong>First Party: {"{{First_Party}}"}</strong>, bearing registration number {"{{First_Party_Registration}}"}, having its registered office at {"{{First_Party_Address}}"} (hereinafter "Disclosing Party"); and
-                        </p>
-                        <p className="mt-1">
-                          <strong>Second Party: {"{{Second_Party}}"}</strong>, bearing registration number {"{{Second_Party_Registration}}"}, having its registered office at {"{{Second_Party_Address}}"} (hereinafter "Receiving Party").
-                        </p>
-                      </div>
-
-                      <div>
-                        <div className="font-bold text-[#111] mb-1 text-[8px]">RECITALS</div>
-                        <p>
-                          <strong>WHEREAS</strong>, the Disclosing Party possesses certain proprietary and confidential information relating to its business operations, technology, and trade secrets;
-                        </p>
-                        <p className="mt-1">
-                          <strong>WHEREAS</strong>, the Receiving Party desires to receive and evaluate such information for the Permitted Purpose: <strong>{"{{Purpose_of_Disclosure}}"}</strong>.
-                        </p>
-                      </div>
-
-                      <div>
-                        <div className="font-bold text-[#111] mb-1 text-[8px]">1. DEFINITIONS</div>
-                        <p>
-                          <strong>\"Confidential Information\"</strong> means all non-public, proprietary information disclosed by the Disclosing Party including source code, customer lists, and financial records...
-                        </p>
-                      </div>
+                    <div className="flex-1 py-2 overflow-y-auto space-y-1.5 scrollbar-none">
+                      {previewData.page2.map((para, idx) => {
+                        const trimmed = para.trim();
+                        // Header detection
+                        if (trimmed.length < 80 && (
+                          trimmed === trimmed.toUpperCase() || 
+                          /^\d+\.\s+[A-Z]/.test(trimmed) || 
+                          /^[A-Z\s&,\-\(\):]+$/.test(trimmed) && trimmed.length > 3
+                        )) {
+                          return (
+                            <div key={idx} className="font-bold text-[#111] mt-2 mb-0.5 text-[7.5px] uppercase tracking-wide">
+                              {trimmed}
+                            </div>
+                          );
+                        }
+                        // List item detection
+                        if (/^\([a-z\d]\)\s+/.test(trimmed) || /^-\s+/.test(trimmed) || /^\d+\.\d+\s+/.test(trimmed) || /^[a-z]\.\s+/.test(trimmed)) {
+                          return (
+                            <p key={idx} className="pl-3 mt-0.5 text-[6.5px] text-[#444] leading-normal">
+                              {trimmed}
+                            </p>
+                          );
+                        }
+                        return (
+                          <p key={idx} className="mt-1 text-[6.5px] leading-relaxed text-[#444]">
+                            {trimmed}
+                          </p>
+                        );
+                      })}
                     </div>
 
-                    <div className="border-t border-[#F0EBE1] pt-1.5 text-center text-[6px] text-[#888]">
+                    <div className="border-t border-[#F0EBE1] pt-1.5 text-center text-[6px] text-[#888] shrink-0">
                       Page 2 of 4
                     </div>
                   </div>
 
-                  {/* PAGE 3: Key Covenants */}
+                  {/* PAGE 3: Dynamic Content Page 3 */}
                   <div
                     id="preview-page-3"
                     className="aspect-[1/1.4] w-full bg-white shadow-md border border-[#E8E4DC] p-6 text-left flex flex-col justify-between select-none text-[7px] text-[#333] leading-relaxed"
                   >
-                    <div className="flex justify-between border-b border-[#F0EBE1] pb-1.5 text-[6px] text-[#888] font-semibold">
+                    <div className="flex justify-between border-b border-[#F0EBE1] pb-1.5 text-[6px] text-[#888] font-semibold shrink-0">
                       <span>{template.title}</span>
-                      <span>T2L-001</span>
+                      <span>{template.template_number}</span>
                     </div>
 
-                    <div className="flex-1 py-3 space-y-3">
-                      <div>
-                        <div className="font-bold text-[#111] mb-1 text-[8px]">2. OBLIGATIONS OF CONFIDENTIALITY</div>
-                        <p>
-                          The Receiving Party hereby undertakes and agrees to treat all Confidential Information with the utmost secrecy, using at least a reasonable degree of care.
-                        </p>
-                        <p className="mt-1">
-                          The Receiving Party shall restrict disclosure of Confidential Information to its Representatives who have a legitimate need to know.
-                        </p>
-                      </div>
-
-                      <div>
-                        <div className="font-bold text-[#111] mb-1 text-[8px]">3. EXCLUSIONS FROM CONFIDENTIALITY</div>
-                        <p>
-                          The obligations shall not apply to information that: (a) is or becomes publicly available; (b) was already in the lawful possession; or (c) is independently developed.
-                        </p>
-                      </div>
-
-                      <div>
-                        <div className="font-bold text-[#111] mb-1 text-[8px]">4. TERM AND TERMINATION</div>
-                        <p>
-                          This Agreement remains in force for a period of <strong>{"{{Term_Duration}}"}</strong>. Confidentiality obligations survive for <strong>{"{{Survival_Period}}"}</strong>.
-                        </p>
-                      </div>
+                    <div className="flex-1 py-2 overflow-y-auto space-y-1.5 scrollbar-none">
+                      {previewData.page3.map((para, idx) => {
+                        const trimmed = para.trim();
+                        // Header detection
+                        if (trimmed.length < 80 && (
+                          trimmed === trimmed.toUpperCase() || 
+                          /^\d+\.\s+[A-Z]/.test(trimmed) || 
+                          /^[A-Z\s&,\-\(\):]+$/.test(trimmed) && trimmed.length > 3
+                        )) {
+                          return (
+                            <div key={idx} className="font-bold text-[#111] mt-2 mb-0.5 text-[7.5px] uppercase tracking-wide">
+                              {trimmed}
+                            </div>
+                          );
+                        }
+                        // List item detection
+                        if (/^\([a-z\d]\)\s+/.test(trimmed) || /^-\s+/.test(trimmed) || /^\d+\.\d+\s+/.test(trimmed) || /^[a-z]\.\s+/.test(trimmed)) {
+                          return (
+                            <p key={idx} className="pl-3 mt-0.5 text-[6.5px] text-[#444] leading-normal">
+                              {trimmed}
+                            </p>
+                          );
+                        }
+                        return (
+                          <p key={idx} className="mt-1 text-[6.5px] leading-relaxed text-[#444]">
+                            {trimmed}
+                          </p>
+                        );
+                      })}
                     </div>
 
-                    <div className="border-t border-[#F0EBE1] pt-1.5 text-center text-[6px] text-[#888]">
+                    <div className="border-t border-[#F0EBE1] pt-1.5 text-center text-[6px] text-[#888] shrink-0">
                       Page 3 of 4
                     </div>
                   </div>
 
-                  {/* PAGE 4: Execution / Signatures */}
+                  {/* PAGE 4: Dynamic Content Page 4 */}
                   <div
                     id="preview-page-4"
                     className="aspect-[1/1.4] w-full bg-white shadow-md border border-[#E8E4DC] p-6 text-left flex flex-col justify-between select-none text-[7px] text-[#333] leading-relaxed"
                   >
-                    <div className="flex justify-between border-b border-[#F0EBE1] pb-1.5 text-[6px] text-[#888] font-semibold">
+                    <div className="flex justify-between border-b border-[#F0EBE1] pb-1.5 text-[6px] text-[#888] font-semibold shrink-0">
                       <span>{template.title}</span>
-                      <span>T2L-001</span>
+                      <span>{template.template_number}</span>
                     </div>
 
-                    <div className="flex-1 py-3 space-y-3">
-                      <div>
-                        <div className="font-bold text-[#111] mb-1 text-[8px]">EXECUTION</div>
-                        <p>
-                          IN WITNESS WHEREOF, the Parties have executed this Agreement as of the Effective Date, by their duly authorised representatives.
-                        </p>
-                      </div>
+                    <div className="flex-1 py-2 overflow-y-auto space-y-1.5 scrollbar-none">
+                      {previewData.page4.map((para, idx) => {
+                        const trimmed = para.trim();
+                        // Header detection
+                        if (trimmed.length < 80 && (
+                          trimmed === trimmed.toUpperCase() || 
+                          /^\d+\.\s+[A-Z]/.test(trimmed) || 
+                          /^[A-Z\s&,\-\(\):]+$/.test(trimmed) && trimmed.length > 3
+                        )) {
+                          return (
+                            <div key={idx} className="font-bold text-[#111] mt-2 mb-0.5 text-[7.5px] uppercase tracking-wide">
+                              {trimmed}
+                            </div>
+                          );
+                        }
+                        
+                        // Signature lines or empty sign boxes
+                        if (trimmed.includes("_____") || trimmed.includes("Name:") || trimmed.includes("Title:") || trimmed.includes("Date:")) {
+                          return (
+                            <p key={idx} className="text-[6px] text-[#555] font-mono leading-tight my-1">
+                              {trimmed}
+                            </p>
+                          );
+                        }
 
-                      <div className="grid grid-cols-2 gap-4 pt-2">
-                        <div className="border border-[#F0EBE1] p-2 rounded space-y-1 bg-[#FAFAF8]">
-                          <div className="font-bold text-[#111]">FOR DISCLOSING PARTY</div>
-                          <div className="h-4 border-b border-dashed border-[#E8E4DC] my-1" />
-                          <div>Name: _________________</div>
-                          <div>Title: _________________</div>
-                          <div>Date: _________________</div>
-                        </div>
-
-                        <div className="border border-[#F0EBE1] p-2 rounded space-y-1 bg-[#FAFAF8]">
-                          <div className="font-bold text-[#111]">FOR RECEIVING PARTY</div>
-                          <div className="h-4 border-b border-dashed border-[#E8E4DC] my-1" />
-                          <div>Name: _________________</div>
-                          <div>Title: _________________</div>
-                          <div>Date: _________________</div>
-                        </div>
-                      </div>
-
-                      <div className="pt-2">
-                        <div className="font-bold text-[#666] text-[6px] uppercase">Witness:</div>
-                        <p className="mt-1">Name: ________________________ Address: ________________________</p>
-                      </div>
+                        // List item detection
+                        if (/^\([a-z\d]\)\s+/.test(trimmed) || /^-\s+/.test(trimmed) || /^\d+\.\d+\s+/.test(trimmed) || /^[a-z]\.\s+/.test(trimmed)) {
+                          return (
+                            <p key={idx} className="pl-3 mt-0.5 text-[6.5px] text-[#444] leading-normal">
+                              {trimmed}
+                            </p>
+                          );
+                        }
+                        return (
+                          <p key={idx} className="mt-1 text-[6.5px] leading-relaxed text-[#444]">
+                            {trimmed}
+                          </p>
+                        );
+                      })}
                     </div>
 
-                    <div className="border-t border-[#F0EBE1] pt-1.5 text-center text-[6px] text-[#888]">
+                    <div className="border-t border-[#F0EBE1] pt-1.5 text-center text-[6px] text-[#888] shrink-0">
                       Page 4 of 4
                     </div>
                   </div>
