@@ -4,6 +4,7 @@
 // ============================================================
 
 export interface TemplatePreviewText {
+  page1: string[];
   page2: string[];
   page3: string[];
   page4: string[];
@@ -11,7 +12,7 @@ export interface TemplatePreviewText {
 
 export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
   "co-founder-agreement": {
-    "page2": [
+    "page1": [
       "FOUNDER & MARKETING & OPERATIONS CO-FOUNDER AGREEMENT",
       "This Founders and Marketing & Operations Co-Founder Agreement (\"Agreement\") is executed on this ______ day of _________",
       "BETWEEN:",
@@ -36,14 +37,14 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
       "A. ROLE OF THE FOUNDER – MR. ____________",
       "The Parties acknowledge and agree that Mr._________________, being the Founder of the Company, shall have primary responsibility for the legal, compliance, financial, governance, operational, and customer relationship management functions of the Company.",
       "Without limitation to the foregoing, the Founder shall oversee and supervise all matters relating to corporate governance, statutory compliances, regulatory filings, contractual documentation, legal affairs, accounting oversight, taxation matters, budgeting, financial planning, banking relationships, investor communications, customer relationship management, client retention, stakeholder engagement, operational management, risk assessment, administrative functions, and strategic decision-making affecting the overall direction of the Company.",
-      "The Founder shall further be responsible for ensuring that the Company conducts its affairs in compliance with all applicable laws, regulations, governmental directives, and internal governance policies, maintaining key customer and stakeholder relationships, and shall take reasonable steps to protect the legal, financial, commercial, and reputational interests of the Company."
-    ],
-    "page3": [
+      "The Founder shall further be responsible for ensuring that the Company conducts its affairs in compliance with all applicable laws, regulations, governmental directives, and internal governance policies, maintaining key customer and stakeholder relationships, and shall take reasonable steps to protect the legal, financial, commercial, and reputational interests of the Company.",
       "B. ROLE OF CO-FOUNDER (MARKETING & OPERATIONS) – MR. ________________",
       "The Parties acknowledge and agree that Mr. ____________ shall have primary responsibility for the sales, marketing, revenue generation, business development, brand growth, market expansion, and operational support functions of the Company.",
       "Without limitation to the foregoing, Mr._____________ shall be responsible for developing and implementing sales strategies, identifying and acquiring clients, building, expanding market presence, developing strategic partnerships, overseeing marketing campaigns, enhancing brand visibility, generating business opportunities, and contributing towards the achievement of the Company's commercial and revenue objectives, and supporting the operational growth of the Company.",
       "Mr.___________ shall further be responsible for regularly monitoring market trends, customer requirements, competitor activities, operational efficiencies, and growth opportunities and shall provide recommendations to the Company regarding business expansion, market positioning, and operational improvements.",
-      "C. COLLABORATIVE RESPONSIBILITIES",
+      "C. COLLABORATIVE RESPONSIBILITIES"
+    ],
+    "page2": [
       "The Parties acknowledge that while specific responsibilities have been allocated to the Founder and the Co-Founder under this Agreement, both Parties shall remain collectively responsible for promoting the interests, reputation, growth, and success of the Company.",
       "Each Party shall provide reasonable cooperation, assistance, information, and support to the other Party whenever required for the efficient operation of the Company's business. No Party shall unreasonably withhold information, delay decisions, or otherwise impede the performance of the other Party in the discharge of his assigned responsibilities.",
       "D. LIMITATION OF INDIVIDUAL AUTHORITY",
@@ -68,9 +69,61 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
       "No Party shall, without the prior written consent of the other Party, deliberately neglect his responsibilities, abandon his duties, repeatedly fail to perform his assigned functions, or engage in conduct that materially interferes with the effective operation of the Company.",
       "The Parties acknowledge that occasional absences, temporary unavailability, personal commitments, illness, examinations, academic obligations, internships, placements, professional commitments, or other reasonable circumstances shall not constitute a breach of this obligation provided that such Party continues to act in good faith and takes reasonable steps to ensure continuity of operations.",
       "The Co-Founder shall have full freedom to continue and pursue academic commitments, internships, placements, hackathons, consulting assignments, freelance work, research activities, networking activities, investments, employment opportunities, and independent entrepreneurial ventures alongside his role within the Company, provided that such activities do not involve the misuse of the Company's Confidential Information, Intellectual Property, proprietary assets, business opportunities, technology assets, personnel, or resources and do not materially interfere with the Co-Founder's obligations under this Agreement.",
-      "The Parties acknowledge and agree that the Co-Founder's association with the Company is based on mutual collaboration, flexibility, and professional understanding and shall not constitute an exclusive full-time employment arrangement unless otherwise expressly agreed in writing by the Parties."
+      "The Parties acknowledge and agree that the Co-Founder's association with the Company is based on mutual collaboration, flexibility, and professional understanding and shall not constitute an exclusive full-time employment arrangement unless otherwise expressly agreed in writing by the Parties.",
+      "The Parties further acknowledge that contribution levels may reasonably vary depending upon academic commitments, examinations, internships, professional engagements, health conditions, personal circumstances, or other legitimate obligations. Accordingly, no Party shall be deemed inactive, non-contributing, or in breach of his participation obligations solely because of temporary reductions in availability arising from such circumstances.",
+      "No Party shall be deemed inactive or non-contributing unless there exists a material and continuous failure to participate in his agreed responsibilities for a period exceeding ninety (90) consecutive days without reasonable communication, cooperation, or justification.",
+      "Any determination regarding inactivity, insufficient contribution, failure to perform responsibilities, or alleged non-participation shall first be discussed between the Parties in good faith and assessed in a fair, reasonable, objective, and commercially balanced manner having regard to the nature of the responsibilities assigned, the circumstances affecting the relevant Party, the overall contributions made to the Company, and the legitimate interests of the Company.",
+      "The Founder shall not unilaterally classify the Co-Founder as inactive, non-contributing, or in material breach of this Clause without first providing written notice specifying the concerns and allowing the Co-Founder a reasonable opportunity of not less than thirty (30) days to explain the circumstances and, where reasonably possible, remedy the situation.",
+      "Notwithstanding the foregoing, the Co-Founder shall remain responsible for the proper discharge of the responsibilities assigned to him under this Agreement and shall keep the Founder reasonably informed of any prolonged absence, commitment, or circumstance that may materially affect his ability to perform such responsibilities.",
+      "E. AVOIDANCE OF CONFLICTS OF INTEREST",
+      "Each Party shall avoid situations in which his personal interests, financial interests, business interests, or external relationships conflict, or may reasonably be perceived to conflict, with the interests of the Company.",
+      "Where any actual, potential, or perceived conflict of interest arises, the concerned Party shall promptly disclose the same to the other Party in writing and shall provide such information as may reasonably be required to assess the nature and extent of the conflict.",
+      "The Parties agree that the Founder shall determine the appropriate course of action regarding such conflict, including the imposition of restrictions, safeguards, approvals, or other measures necessary to protect the interests of the Company.",
+      "F. CORPORATE OPPORTUNITIES"
+    ],
+    "page3": [
+      "No Party shall directly or indirectly appropriate for himself, or for any third party, any business opportunity, client opportunity, investment opportunity, partnership opportunity, commercial arrangement, technology opportunity, or strategic opportunity that properly belongs to or is reasonably connected with the business of the Company.",
+      "Any such opportunity identified by a Party during the course of his association with the Company shall first be presented to the Company for consideration before being pursued independently.",
+      "The Parties acknowledge that opportunities arising from the Company's business relationships, operations, intellectual property, confidential information, goodwill, or market position shall be deemed opportunities belonging to the Company.",
+      "G. COMPLIANCE WITH LAW AND COMPANY POLICIES",
+      "Each Party shall comply with all applicable laws, regulations, governmental requirements, industry standards, internal policies, corporate governance requirements, contractual obligations, and lawful directions issued by the Company.",
+      "No Party shall knowingly cause or permit the Company to engage in unlawful, fraudulent, misleading, unethical, or improper conduct or expose the Company to avoidable legal, regulatory, financial, or reputational risk.",
+      "H. MUTUAL RESPECT AND COOPERATION",
+      "The Parties acknowledge that the success of the Company depends upon mutual trust, cooperation, and professional conduct. Accordingly, each Party shall treat the other Party with respect and professionalism and shall make reasonable efforts to resolve disagreements constructively and in good faith.",
+      "No Party shall deliberately obstruct, undermine, sabotage, or interfere with the lawful performance of another Party's responsibilities or authority under this Agreement.",
+      "I. ACCOUNTABILITY FOR BREACH",
+      "The Parties acknowledge that the obligations contained in this Clause are fundamental to the governance and operation of the Company. Any material breach of these obligations by a Party may constitute grounds for disciplinary action, suspension of responsibilities, compulsory share transfer procedures, removal from management functions, or such other remedies as may be available under this Agreement, the Articles of Association of the Company, or applicable law.",
+      "The Parties further acknowledge that compliance with the duties and obligations set forth herein is essential to maintaining the confidence, trust, and cooperative relationship upon which the Company is founded and operated.",
+      "DECISION-MAKING, FOUNDER APPROVALS AND RESERVED MATTERS",
+      "The Parties acknowledge and agree that the efficient management of the Company requires a clear framework governing decision-making authority and approvals. While each Party shall have authority to manage and supervise the functional area assigned to him under this Agreement, certain matters having a material impact on the ownership, governance, finances, operations, liabilities, strategic direction, or future of the Company shall require additional approvals in accordance with the provisions of this Clause.",
+      "The Parties further acknowledge that this Clause is intended to promote transparency, accountability, and collaborative decision-making between the Founder and the Co-Founder and to prevent disputes arising from unilateral actions affecting the Company.",
+      "A. ORDINARY BUSINESS DECISIONS",
+      "Subject to the provisions of this Agreement, each Party shall be entitled to independently manage and take routine operational decisions relating to the area of responsibility assigned to him under Clause 2, provided that such decisions are made in good faith and in the best interests of the Company.",
+      "Without limitation, ordinary business decisions may include routine operational activities, day-to-day management functions, execution of approved business strategies, customer communications, employee supervision, vendor coordination, product development activities, marketing initiatives, and other activities ordinarily required for the conduct of the Company's business.",
+      "The Party exercising such authority shall keep the other Party reasonably informed regarding material developments, risks, opportunities, and decisions affecting the Company's operations.",
+      "B. DECISIONS REQUIRING MAJORITY APPROVAL",
+      "The Parties agree that the following matters shall require the approval of shareholders collectively holding more than fifty percent (50%) of the issued share capital of the Company:",
+      "• Approval of annual operating budgets;",
+      "• Recruitment of senior employees or consultants;",
+      "• Approval of routine business expenditures exceeding approved departmental budgets;",
+      "• Entry into ordinary-course commercial contracts;",
+      "• Approval of marketing campaigns and business development initiatives;",
+      "• Appointment of professional advisors, consultants, vendors, or service providers;",
+      "• Opening additional operational offices or business locations;",
+      "• Adoption of routine operational policies and procedures;",
+      "• Any other matter not specifically designated as a Reserved Matter under this Agreement.",
+      "For the purposes of this Clause, the shareholding percentages existing at the time of the decision shall determine voting rights.",
+      "The Parties acknowledge and agree that, as of the Effective Date, Mr. Yash Phogat holds Eighty Percent (80%) of the issued share capital of the Company and shall accordingly be entitled to approve matters requiring a simple majority unless otherwise expressly provided under this Agreement or applicable law.",
+      "C. RESERVED MATTERS REQUIRING UNANIMOUS APPROVAL",
+      "The Parties acknowledge that certain matters are of fundamental importance to the ownership, governance, and future of the Company and shall therefore require the prior written consent of both Parties irrespective of their shareholding percentages.",
+      "Accordingly, none of the following actions shall be undertaken without the unanimous written approval of both Parties:"
     ],
     "page4": [
+      "The Parties agree to act in good faith and cooperate with one another in all matters reasonably necessary to implement and give effect to the provisions of this Agreement and to promote the successful operation, growth, management, and development of the Company.",
+      "The Co-Founder further agrees to reasonably cooperate with the Founder in matters relating to the Company's administration, governance, compliance, operations, strategic direction, and business development and shall not unreasonably obstruct decisions taken in accordance with this Agreement.",
+      "P. Survival",
+      "The provisions of this Agreement which by their nature are intended to survive the execution, completion, expiration, or termination of this Agreement, including but not limited to the provisions relating to Confidentiality, Intellectual Property, Non-Disparagement, Non-Solicitation, Dispute Resolution, and any accrued rights or obligations of the Parties, shall survive and continue in full force and effect notwithstanding the termination of this Agreement or cessation of a Party's association with the Company.",
+      "Q. Headings",
       "The headings, titles, and captions used in this Agreement are inserted solely for convenience of reference and shall not affect the interpretation, construction, scope, or meaning of any provision of this Agreement.",
       "R. Relationship with Articles of Association",
       "The Parties acknowledge that certain rights and obligations contained in this Agreement may also be required to be reflected in the Articles of Association of the Company. In the event of any inconsistency between this Agreement and the Articles of Association, the Parties shall take all reasonable steps to amend the Articles of Association to the extent permitted by law so as to give effect to the intent of this Agreement.",
@@ -89,7 +142,7 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
     ]
   },
   "co-founder-exit-agreement": {
-    "page2": [
+    "page1": [
       "CO-FOUNDER EXIT AGREEMENT",
       "This Co-Founder Exit Agreement (\"Agreement\") is executed on this ___ day of ________, 2026.",
       "BY AND BETWEEN:",
@@ -116,7 +169,7 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
       "(c) Ten Percent (10%) of the Company's issued share capital shall be transferred to and held by Mr. _____________.",
       "Accordingly, following the completion of the aforesaid transfer, the shareholding structure of the Company shall be as follows:"
     ],
-    "page3": [
+    "page2": [
       "Mr.                          – Eighty Percent (80%);",
       "Mr. _____________ – Ten Percent (10%); and",
       "Mr. _____________ – Ten Percent (10%).",
@@ -141,9 +194,51 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
       "The Exiting Co-Founder acknowledges and agrees that all intellectual property, work product, developments, inventions, discoveries, improvements, designs, concepts, business processes, strategies, documents, software, source code, databases, content, trademarks, branding materials, marketing materials, presentations, reports, research, and other materials created, developed, conceived, authored, or contributed to by him, whether individually or jointly with others, during the course of his association with the Company and relating to the business of the Company, shall be and remain the sole and exclusive property of the Company.",
       "To the extent that any right, title, or interest in any such intellectual property or work product may vest in the Exiting Co-Founder by operation of law or otherwise, the Exiting Co-Founder hereby irrevocably assigns, transfers, and conveys all such rights, title, and interest to the Company without any further consideration, and agrees to execute such additional documents and take such actions as may reasonably be required by the Company to evidence, perfect, protect, or enforce the Company's ownership thereof.",
       "The Exiting Co-Founder further confirms that he shall not claim any ownership, authorship, royalty, license fee, compensation, or other proprietary interest in relation to any intellectual property, work product, or materials developed during his/her association with the Company.",
-      "The Exiting Co-Founder shall not, after the Effective Date, use, reproduce, distribute, modify, license, commercialize, disclose, exploit, or permit any third party to use any intellectual property or work product belonging to the Company without the Company's prior written consent."
+      "The Exiting Co-Founder shall not, after the Effective Date, use, reproduce, distribute, modify, license, commercialize, disclose, exploit, or permit any third party to use any intellectual property or work product belonging to the Company without the Company's prior written consent.",
+      "The Parties acknowledge that all intellectual property and work product created for or on behalf of the Company forms an integral part of the Company's assets and goodwill, and that ownership thereof shall remain vested exclusively with the Company irrespective of the cessation of the Exiting Co-Founder's association with the Company.",
+      "RETURN OF COMPANY PROPERTY, DATA AND ACCESS CREDENTIALS",
+      "The Exiting Co-Founder confirms and undertakes that, on or before the Effective Date, he shall return to the Company all property, records, materials, and assets belonging to or relating to the Company that are in his possession, custody, or control, whether in physical or electronic form.",
+      "Such property shall include, without limitation, laptops, mobile devices, storage devices, documents, records, contracts, files, correspondence, business materials, identity cards, access cards, company stationery, and any other assets or materials belonging to the Company.",
+      "The Exiting Co-Founder shall further deliver to the Company all passwords, login credentials, authentication devices, access codes, recovery information, and administrative rights relating to any email accounts, software platforms, cloud storage systems, websites, domains, social media accounts, communication platforms, databases, financial systems, customer relationship management systems, and any other digital assets used for or in connection with the Company's business."
+    ],
+    "page3": [
+      "The Exiting Co-Founder represents and warrants that he shall not retain, copy, download, transfer, store, reproduce, or otherwise preserve any Company data, records, Confidential Information, customer information, business information, intellectual property, or other proprietary materials after the Effective Date, except where retention is required by applicable law.",
+      "Where any Company information, records, or data are stored on personal devices, accounts, or storage systems of the Exiting Co-Founder, the Exiting Co-Founder shall promptly and permanently delete the same upon completion of the handover process and, if requested by the Company, provide written confirmation of such deletion.",
+      "The Exiting Co-Founder further undertakes that he shall not access, attempt to access, interfere with, modify, delete, disrupt, or otherwise interact with any Company systems, accounts, databases, software, digital platforms, or assets following the Effective Date unless expressly authorized in writing by the Company.",
+      "The Parties acknowledge that the proper return of Company property and transfer of access credentials is a material obligation under this Agreement and is necessary to ensure the continuity, security, and integrity of the Company's operations.",
+      "NON- DISPARAGEMENT",
+      "The Parties agree that, following the Effective Date, they shall conduct themselves in a professional and respectful manner and shall refrain from making, publishing, communicating, or causing to be communicated any statement, representation, allegation, or comment that is false, misleading, defamatory, derogatory, or otherwise likely to harm the reputation, goodwill, business interests, or standing of the other Party.",
+      "Without limiting the generality of the foregoing, the Exiting Co-Founder shall not make any statement to any employee, client, prospective client, vendor, investor, shareholder, business associate, governmental authority, media platform, social media platform, or any other third party that may reasonably be expected to adversely affect the reputation, operations, relationships, or business prospects of the Company.",
+      "Similarly, the Company shall ensure that its authorized representatives do not knowingly make any false, misleading, defamatory, or derogatory statements concerning the Exiting Co-Founder with the intention of damaging his/her personal or professional reputation.",
+      "Nothing contained in this Clause shall prevent either Party from making truthful statements where required by applicable law, regulatory authority, judicial order, or governmental directive, or from providing factual information in response to legitimate inquiries made in good faith.",
+      "The Parties acknowledge that the preservation of professional goodwill and reputation is an important consideration underlying this Agreement, and accordingly agree to comply with the obligations contained in this Clause both during and after the completion of the exit contemplated herein.",
+      "NON-SOLICITATION",
+      "The Exiting Co-Founder acknowledges that, by virtue of his association with the Company, he has had access to the Company's employees, consultants, interns, clients, prospective clients, vendors, business partners, and other business relationships that constitute valuable assets of the Company.",
+      "Accordingly, for a period of twenty-four (24) months from the Effective Date, the Exiting Co-Founder shall not, directly or indirectly, on his own behalf or on behalf of any other person or entity, solicit, induce, encourage, persuade, or attempt to persuade any employee, consultant, intern, advisor, contractor, or representative of the Company to terminate, reduce, or alter their relationship with the Company.",
+      "During the aforesaid period, the Exiting Co-Founder shall further not directly or indirectly solicit, divert, induce, encourage, or attempt to influence any client, prospective client, vendor, supplier, investor, strategic partner, or other business contact of the Company to discontinue, reduce, modify, or adversely affect their existing or prospective business relationship with the Company.",
+      "Nothing contained herein shall prohibit the Exiting Co-Founder from engaging in general business activities that are not specifically targeted toward the Company's employees, clients, vendors, or business relationships, nor shall it restrict any person from independently approaching the Exiting Co-Founder without any solicitation or encouragement on his/her part.",
+      "The Parties acknowledge that the restrictions contained in this Clause are reasonable and necessary for the protection of the Company's legitimate business interests, goodwill, confidential information, and business relationships and have been voluntarily agreed upon as a material condition of this Agreement.",
+      "RELEASE AND WAIVER OF CLAIMS",
+      "In consideration of the mutual covenants, undertakings, and obligations contained in this Agreement, the Parties hereby irrevocably and unconditionally release, discharge, and waive any and all claims, demands, actions, causes of action, complaints, liabilities, obligations, damages, costs, expenses, or rights of any nature whatsoever, whether known or unknown, existing or arising in the future, that either Party may have against the other arising out of or in connection with the Exiting Co-Founder's association with the Company up to the Effective Date.",
+      "The Exiting Co-Founder expressly acknowledges that, except for the rights and obligations specifically set out in this Agreement, he shall have no further claim against the Company, its shareholders, directors, officers, employees, representatives, successors, or assigns in relation to any matter arising from his/her involvement with the Company.",
+      "Similarly, subject to the terms of this Agreement, the Company shall have no further claim against the Exiting Co-Founder in relation to matters disclosed, settled, and resolved pursuant to this Agreement, except in the event of fraud, wilful misconduct, breach of confidentiality obligations, misuse of Company property, infringement of intellectual property rights, or any other breach of obligations that expressly survive the execution of this Agreement.",
+      "The Parties acknowledge that this release has been voluntarily agreed upon after adequate opportunity to understand the terms of this Agreement and is intended to bring about a complete and final settlement of all matters arising from the Exiting Co-Founder's association with the Company.",
+      "The Parties further agree that neither Party shall initiate, support, encourage, or participate in any legal proceeding, claim, complaint, or action against the other concerning matters that have been fully and finally settled pursuant to this Agreement, except for the purpose of enforcing the provisions of this Agreement or protecting rights expressly preserved herein.",
+      "FURTHER ASSURANCES AND COOPERATION",
+      "The Exiting Co-Founder agrees that he shall, both before and after the Effective Date, execute, acknowledge, deliver, and provide such documents, instruments, declarations, confirmations, applications, forms, and other records as may be reasonably required by the Company for the purpose of giving full effect to the terms and intent of this Agreement.",
+      "Without limiting the generality of the foregoing, the Exiting Co-Founder shall extend reasonable cooperation and assistance in relation to the completion of share transfer formalities, execution of statutory forms, corporate filings, regulatory compliances, bank account modifications, changes to authorized signatories, contractual notifications, intellectual property matters, and any other actions reasonably necessary to effectuate and document the cessation of his/her association with the Company.",
+      "The Exiting Co-Founder further agrees to provide such clarifications, confirmations, or information as may be reasonably requested by the Company in connection with matters arising from his/her period of association with the Company, provided that such requests are made in good faith and relate to legitimate business, legal, regulatory, or compliance requirements.",
+      "Where any document, filing, approval, authorization, or action is required for implementing the provisions of this Agreement, the Parties shall cooperate with each other and act in a timely manner to facilitate the completion of the same.",
+      "The obligations contained in this Clause shall survive the execution of this Agreement and shall continue until all actions reasonably required to implement and give effect to the terms of this Agreement have been completed.",
+      "GOVERNING LAW AND DISPUTE RESOLUTION",
+      "This Agreement shall be governed by and construed in accordance with the laws of India."
     ],
     "page4": [
+      "The execution of this Agreement and the transactions contemplated herein shall not constitute or be construed as an admission by either Party of any liability, wrongdoing, misconduct, breach, fault, or violation of any obligation. This Agreement is entered into solely for the purpose of recording the terms governing the Exiting Co-Founder's separation from the Company.",
+      "Cumulative Remedies",
+      "The rights, powers, privileges, and remedies provided under this Agreement are cumulative and shall be in addition to, and not in substitution for, any rights or remedies available under applicable law. The exercise of any one right or remedy shall not preclude the exercise of any other right or remedy.",
+      "Interpretation",
+      "Unless the context otherwise requires, words importing the singular shall include the plural and vice versa, references to any gender shall include all genders, and references to persons shall include individuals, companies, corporations, partnerships, firms, associations, trusts, governmental authorities, and other legal entities.",
       "Independent Understanding",
       "Each Party acknowledges and confirms that it has carefully read and understood the contents of this Agreement, has had adequate opportunity to seek independent legal, financial, and professional advice, and is entering into this Agreement voluntarily and with full understanding of its rights, obligations, and legal consequences.",
       "Good Faith Cooperation",
@@ -162,7 +257,7 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
     ]
   },
   "employment-agreement-equity-vesting": {
-    "page2": [
+    "page1": [
       "EMPLOYMENT AGREEMENT WITH EQUITY VESTING",
       "TITLE & PARTIES",
       "This Employment Agreement with Equity Vesting (“Agreement”) is executed on this ___ day of ________, 2026",
@@ -187,14 +282,14 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
       "1.10 “Confidential Information” means all non-public, proprietary, or confidential information relating to the Company, including but not limited to business plans, financial data, trade secrets, technology, clients, operations, and any information designated as confidential or which ought reasonably to be considered confidential.",
       "POSITION:",
       "Upon execution of this Agreement, you acknowledge that you would be posted as the ____________ of the Company. During the term period of this Agreement, the Company may change the Employee's above mentioned post (or position) or location based on the Company's production, operation or working requirements or according to the employee's working capacities and performance, including but not limited to adjustments made to the employee's job description or work place, promotion, work transfer at the same level, and demotion, etc., or adjustments made to the employee's responsibilities without any change to employee's post (or position).",
-      "OFFER OF EMPLOYMENT:"
-    ],
-    "page3": [
+      "OFFER OF EMPLOYMENT:",
       "The Company is pleased to offer you the position of __________ with effect from __________ until __________, subject to the terms set out in this letter. You will be required to perform such duties as may be assigned from time to time and devote your full working time and attention to the Company’s business in compliance with all applicable policies and directions.",
       "PROBATION PERIOD:",
       "Upon commencement of employment, you will be placed on probation for a period of _____ months (“Probation Period”), which may be extended at the sole discretion of the Company. During the Probation Period, the Employee’s performance, conduct, behavior, and overall suitability for the role shall be evaluated by the Company, and if at any time the same is found to be unsatisfactory, the Company may terminate the Employee’s employment by providing ___ days’ prior notice or payment in lieu of such notice, without assigning any reason. Upon satisfactory completion of the Probation Period, as determined by the Company, the Employee’s employment shall be confirmed in writing, and the decision of the Company in this regard shall be final and binding on the Employee.",
       "WORKING HOURS:",
-      "You may be required to work in shifts and/or in extended working hours, as permitted by project management. Weekends should be worked as per business needs if required.",
+      "You may be required to work in shifts and/or in extended working hours, as permitted by project management. Weekends should be worked as per business needs if required."
+    ],
+    "page2": [
       "LEAVE AND SICKNESS:",
       "During probation and the notice period, grant of leave shall be strictly at the Company’s discretion in accordance with its policy. The Employee shall be entitled to such categories and quantum of leave, including casual leave, sick leave, and public holidays, as may be prescribed under the Company’s Leave Policy from time to time. Unless expressly provided in the Company’s policy or required under applicable law, leave shall not be carried forward or encashed. In case of absence due to illness or injury, the Employee shall notify the Company in such manner as may be prescribed under the Company’s policy. The Company reserves the right to require appropriate supporting documents, including medical certificates, in accordance with its policy. All leave and related benefits shall be subject to compliance with the Company’s Leave Policy and applicable law, and the Company reserves the right to modify such policy from time to time.",
       "PLACE OF EMPLOYEMENT AND TRANSFER:",
@@ -219,9 +314,61 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
       "10.4 Exercise of Options",
       "10.4.1 The Employee shall be entitled to exercise vested options by paying the exercise price as determined under the ESOP policy of the Company.",
       "10.4.2 Upon such exercise and allotment of shares, the Employee shall become a shareholder of the Company and shall be entitled to all rights attached to such shares, including voting and dividend rights.",
-      "10.4.3 Until such exercise and allotment, the Employee shall have no rights as a shareholder."
+      "10.4.3 Until such exercise and allotment, the Employee shall have no rights as a shareholder.",
+      "10.5 Termination of Employment",
+      "10.5.1 In the event of resignation or termination of employment other than for cause:",
+      "(a) All unvested options shall lapse immediately; and",
+      "(b) Any vested options must be exercised within ninety (90) days from the date of termination, failing which such vested options shall lapse.",
+      "10.5.2 In the event of termination for cause, including but not limited to misconduct, fraud, or breach of obligations:",
+      "(a) All options, whether vested or unvested, shall stand cancelled with immediate effect.",
+      "10.5.3 The determination of “cause” shall be at the sole discretion of the Board of Directors.",
+      "10.6 Non-Transferability of Options",
+      "10.6.1 The options granted under this Agreement shall be personal to the Employee and shall not be transferable, assignable, pledged, or otherwise encumbered in any manner.",
+      "10.6.2 In the event of the Employee’s death, such options may pass to the Employee’s legal heirs, subject to approval by the Board."
+    ],
+    "page3": [
+      "10.7 Restrictions on Shares",
+      "10.7.1 Any shares issued upon exercise of Options shall be subject to transfer restrictions, including a right of first refusal (“ROFR”) in favor of the Founders and subject to the approval of the Board of Directors.",
+      "10.7.2 In the event that the Employee proposes to sell, transfer, assign, pledge or otherwise dispose of any shares to a third party, the Employee shall:",
+      "(a) Provide prior written notice to the Company and the Founders at least thirty (30) days in advance, specifying the details of the proposed transferee and the terms of the proposed transfer;",
+      "(b) First offer such shares to the Founders on the same terms and conditions as those offered to the third party; and",
+      "(c) Ensure that the proposed transferee is approved by the Board of Directors and agrees in writing to be bound by the terms of this Agreement and any other applicable agreements of the Company.",
+      "10.7.3 The Founders shall have a period of sixty (60) days from the date of receipt of such notice to exercise their right of first refusal and purchase all (and not less than all) of the offered shares on the same terms and conditions.",
+      "10.7.4 If the Founders decline or fail to respond within such period, the Employee may transfer such shares to the proposed third party, provided that:",
+      "(a) Such transfer is completed on terms no more favorable than those offered to the Founders; \n(b) the transferee complies with Clause 10.7.2(c).",
+      "10.7.5 Any transfer of shares made in violation of this Clause shall be null and void and shall not be recognized by the Company.",
+      "10.8 Tag along Rights",
+      "10.8.1 In the event that the Founders propose to transfer their shares to a third party, the Employee shall have the right to participate in such transfer.",
+      "10.8.2 Such participation shall be on a pro rata basis and on the same terms and conditions as offered to the Founders.",
+      "10.9 Dilution",
+      "10.9.1 The Employee acknowledges that their shareholding shall be subject to proportionate dilution in the event of issuance of new shares, investment rounds, or any corporate restructuring.",
+      "10.9.2 No anti-dilution rights are granted unless expressly approved by the Board.",
+      "10.10 Effectiveness and Compliance",
+      "10.10.1 This ESOP grant shall become effective only upon completion of the Employee’s probationary period.",
+      "10.10.2 The grant and exercise of options shall at all times be subject to compliance with applicable laws, including the Companies Act, 2013, and necessary approvals of the Board and shareholders, where required.",
+      "NON- SOLICITATION:",
+      "During the Term of this Agreement and for a period of ____ () years after the termination of this Agreement, the Employee agrees not to solicit any employee, consultant, client or other persons of the Employer, without the Employer’s prior written consent. Furthermore, the employee, in any way, directly or indirectly,  interfere with the relationship between any client or business counterparties or prospective clients.",
+      "CONFIDENTIALITY:",
+      "The Company owns and may develop, compile and own certain proprietary techniques, trade secrets, and confidential information, which are very valuable to the Company (collectively, “Confidential Information”). The Employee may have access to or learn Confidential Information of the Company during the Employee's performance of the Services.",
+      "All records, documents, and files concerning the company shall be treated as confidential information and includes not only information disclosed by Company, but also information developed or learned by the employee during employee's performance of the Services. Company Information is to be broadly defined and includes all information, which has or could have commercial value or other utility in the business that the Company is or may be engaged in and the unauthorized disclosure of which could be detrimental to the interests of Company, whether or not such information is identified by Company.",
+      "Confidential Information includes, but is not limited to, current and future product plans & specifications, technology, algorithms, prototypes, data, methods, processes, developments, designs, inventions, techniques, know-how, details of customers and business contacts, Vendor Information, business model, business plans, business process, marketing, sales or other business information, costs and resources, tools used; and all derivatives or improvements to any of the above. The terms of this Agreement shall also be part of Confidential Information.",
+      "DATA PROTECTION AND PRIVACY:",
+      "The Employee acknowledges that, in the course of employment, they may have access to personal data, confidential information, and sensitive business data relating to the Company, its clients, employees, and partners, and hereby agrees to process, handle, and use such data strictly in accordance with applicable laws, and all rules framed there under, as well as any applicable data protection laws in India, solely for legitimate business purposes of the Company; the Employee shall implement all reasonable and necessary safeguards to prevent any unauthorized access, disclosure, alteration, misuse, or destruction of such data and shall not copy, store, transfer, or process such data outside the Company’s authorized systems or share the same with any third party without prior written consent of the Company; upon termination of employment for any reason whatsoever, the Employee shall immediately return or securely delete all such data in their possession, custody, or control and shall not retain any copies thereof in any form, whether physical or electronic; and the obligations contained under this clause shall survive the termination or expiry of this Agreement and continue to bind the Employee thereafter.",
+      "INTELLECTUAL PROPERTY:",
+      "The Parties agree that the Company shall have complete and sole ownership over the Work Product or Services performed by the Employee under this Agreement.",
+      "The Employee shall promptly disclose in writing to the Company all works, products, contributions and inventions, discoveries, designs, innovations, creations, developments, improvements, works of authorship, ideas, formulae, processes, techniques, know-how and data (whether or not patentable, and whether or not at a commercial stage, or registered under any intellectual property laws) of any kind that are conceived, created, developed, learned or reduced to practice by the Employee (either alone or jointly with others) during the period that Employee provides the Services to the Company, regardless of whether they are conceived or made during regular working hours or at the Company’s place of work, that are directly or indirectly related to the Services, result from tasks assigned to the Employee by the Company, or are conceived or made with the use of the Company’s resources, facilities or materials; including any concepts, ideas, suggestions and approaches related thereto or contained therein (collectively, the “Innovations”).;",
+      "All materials, including without limitation any documents, drawings, drafts, notes, designs, computer media, electronic files and lists, including all additions to, deletions from, alterations of, and revisions in the foregoing (together the “Materials”), which are furnished to the Employee by the Company, or which are developed in the process of performing the Services, or embody or relate to the Services or the Innovations are the property of Company, and shall be returned by Employee to the Company promptly at the Company’s request together with any copies thereof, and in any event promptly upon expiration or termination of this Agreement for any reason. The Employee is granted no rights in or to such Materials or the Innovations, except as necessary to fulfill his obligations under this Agreement.",
+      "NOTICE PERIOD:",
+      "Either Party may terminate this Agreement by providing 15 days prior written notice to the other Party, to enable the Company to transition your work, or payment in lieu of such notice, in accordance with applicable law and Company policy. The Company reserves the right, at its discretion, to relieve you from duties during the notice period or to make payment in lieu of notice, in whole or in part. During the notice period, you shall continue to perform your duties diligently and ensure proper handover of responsibilities as directed by the Company.",
+      "TERMINATION BY THE COMPANY:",
+      "The Company may terminate the your services under the following conditions: (1) the commission of a crime involving moral turpitude, theft, fraud or deceit; (2) conduct that has an adverse effect on the Company’s reputation; (3) substantial or continued unwillingness or inability to perform duties assigned to the Employee; (4) gross negligence or deliberate misconduct; (5) any material breach of the terms and conditions specified in this letter; (6) Unauthorized absence from work for a period of three or more consecutive days without due consent or notifying your superior; (7) Providing any false information to the Company."
     ],
     "page4": [
+      "No Assignment",
+      "You acknowledge that your obligations under this Agreement are personal in nature and shall not be assigned or transferred by you to any third party.",
+      "Accrued Rights",
+      "The expiration or termination of this Agreement, however arising, shall not affect any provisions which are intended to survive termination, nor shall it prejudice any rights or remedies that have accrued to either Party prior to such termination.",
+      "Notices",
       "You acknowledge that any notice, consent, information, or request required or permitted under this Agreement shall be deemed duly given only if it is delivered or sent to the address of the relevant Party as specified in this Agreement.",
       "Severability",
       "You acknowledge that if any provision or part thereof is found to be illegal, invalid, or unenforceable, it shall, to the extent possible, be interpreted in a manner that makes it valid and enforceable, and if such interpretation is not possible, it shall be severed from this Agreement without affecting the validity and enforceability of the remaining provisions.",
@@ -240,7 +387,7 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
     ]
   },
   "ip-agreement-template": {
-    "page2": [
+    "page1": [
       "ASSIGNMENT AGREEMENT",
       "THIS ASSIGNMENT AGREEMENT is effective the _____ day of ____________________, 20_____ (the “Effective Date”) is made by ______________________________________ (Assignor), a Citizen of the United States residing at _____________________________________________________________________________ (Address of Assignor); in favor of NORTH CAROLINA CENTRAL UNIVERSITY (“NCCU”), an educational institution chartered under the laws of the State of North Carolina, having its principal place of business at 1801 Fayetteville Street, Durham, North Carolina 27707.",
       "WHEREAS the ASSIGNOR has created certain intellectual property, more specifically described in Schedule “A” to this Agreement, and is desirous of entering into this Agreement to obtain support and assistance from the NCCU to manage and transfer the intellectual property for commercial use as more particularly described hereinafter;",
@@ -260,14 +407,14 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
       "NCCU acknowledges that the ASSIGNOR has the right to use the Technology and any Improvements for research and educational purposes, and to further develop and improve the Technology.",
       "The ASSIGNOR acknowledges and agrees that he or she shall have the obligation to advise and inform the University, from time-to-time, of Improvements which the ASSIGNOR has developed at NCCU and, when not prevented by other University contractual obligations, shall transfer and assign such Improvements to NCCU if requested by NCCU.",
       "4.\tPATENTS AND COPYRIGHT",
-      "4.1\tThe ASSIGNOR agrees that he or she will provide all the assistance which is reasonably required by NCCU to prepare and prosecute patent applications filed by or assigned to NCCU, to register copyright and to file any application under trade-mark or any other form of intellectual property legislation which may be required to protect the Technology or Improvement in any country, territory, or jurisdiction."
-    ],
-    "page3": [
+      "4.1\tThe ASSIGNOR agrees that he or she will provide all the assistance which is reasonably required by NCCU to prepare and prosecute patent applications filed by or assigned to NCCU, to register copyright and to file any application under trade-mark or any other form of intellectual property legislation which may be required to protect the Technology or Improvement in any country, territory, or jurisdiction.",
       "The ASSIGNOR agrees not to disclose and to maintain in confidence the Technology and any Improvements, unless written notice is given to NCCU or such information becomes part of the public domain without breach of this Agreement.  In the case of written notice, the ASSIGNOR shall advise NCCU in writing at least sixty (60) calendar days prior to making the disclosure.",
       "5.\tNCCU SUPPORT AND SERVICES",
       "5.1\tNCCU will undertake, as appropriate, one or more of the following activities with respect to the Technology:",
       "conduct a preliminary assessment of the Technology;",
-      "develop with assistance of the ASSIGNOR a technology transfer strategy;",
+      "develop with assistance of the ASSIGNOR a technology transfer strategy;"
+    ],
+    "page2": [
       "actively seek licensees for the Technology;",
       "assist in the transfer of the Technology to a company when appropriate;",
       "prepare and negotiate non-disclosure, option, license, and other agreements in implementing the technology transfer strategy;",
@@ -287,9 +434,41 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
       "7.4\tPayments will be made in United States Dollars funds or equivalent.",
       "8.\tTERM AND TERMINATION",
       "8.1\tThis Agreement shall have a term which extends from the Effective Date to the latest date of expiry of a patent included in the Technology obtained by NCCU or its assigns, and in the event the Technology is protected under the provisions of copyright law, the term shall be the longer of:  a period of twenty (20) years following the Effective Date, or upon expiry of the last patent claiming all of any part of the Technology or an Improvement.",
-      "8.2\tNCCU shall have the right to terminate this Agreement when in the sole opinion of NCCU there appears to be no reasonable prospect or expectation of the successful protection or commercialization of the Technology.  In the event of termination pursuant to this Article 8.2, NCCU shall be released from its obligation to pay any further costs associated with the Technology and will negotiate a settlement with the ASSIGNOR for any claim NCCU may have against Revenues ultimately derived from the Technology.  NCCU shall advise the ASSIGNOR of its intention to terminate the Agreement pursuant to Article 8.2 by notice in writing sent to the ASSIGNOR in accordance with Article 10."
+      "8.2\tNCCU shall have the right to terminate this Agreement when in the sole opinion of NCCU there appears to be no reasonable prospect or expectation of the successful protection or commercialization of the Technology.  In the event of termination pursuant to this Article 8.2, NCCU shall be released from its obligation to pay any further costs associated with the Technology and will negotiate a settlement with the ASSIGNOR for any claim NCCU may have against Revenues ultimately derived from the Technology.  NCCU shall advise the ASSIGNOR of its intention to terminate the Agreement pursuant to Article 8.2 by notice in writing sent to the ASSIGNOR in accordance with Article 10.",
+      "8.3\tIn the event of a termination of the Agreement under Article 8.2, the University shall upon written request by the ASSIGNOR reassign all right, title, and interest in the Technology and any Improvements to the ASSIGNOR or such other single third party as may be identified in writing by the ASSIGNOR, subject to satisfactory arrangements being made with the ASSIGNOR or the said third party for sharing of Revenues derived from the Technology.",
+      "9.\tASSIGNMENT OF THE INTELLECTUAL PROPERTY RIGHTS",
+      "9.1\tThe ASSIGNOR acknowledges and agrees that NCCU may assign the Intellectual Property Rights assigned to NCCU under this Agreement to a third party with the prior written consent of the ASSIGNOR.",
+      "10.\tNOTICE",
+      "10.1\tAny notice, payment, or communication required by this Agreement must be given by prepaid, first class, certified mail, return receipt requested, addressed to:"
+    ],
+    "page3": [
+      "North Carolina Central University",
+      "Office of Research Compliance and Technology Transfer",
+      "1801 Fayetteville Street",
+      "309 Hubbard-Totton Building",
+      "Durham, North Carolina 27707",
+      "11.\tGENERAL",
+      "11.1\tThis Agreement shall not be assigned by the ASSIGNOR or NCCU without the prior written consent of all Parties.",
+      "11.2\tThere are no understandings, agreements, representations, or warranties, express or implied, other than as herein set forth or incorporated by specific reference in this Agreement.",
+      "This Agreement shall enure to and be binding upon the Parties, their successors, and lawful assigns.",
+      "This Agreement may not be amended except in writing by all of the Parties.",
+      "The singular shall include the plural, words denoting the masculine shall include the feminine, and vice versa.",
+      "This Agreement may be signed in counterparts, each of which when taken together, will constitute an original Agreement.",
+      "This Agreement shall be governed by the laws of North Carolina and the laws of The United States of America as applicable, and any dispute between the Parties with respect to this Agreement shall be subject to the jurisdiction of the North Carolina Courts.",
+      "IN WITNESS WHEREOF, each Party has caused its duly authorized representative to sign this Agreement.",
+      "Schedule “A”",
+      "[Add digital copy of Invention Disclosure form, Patent Application, or equivalent document.]",
+      "Exhibit 1",
+      "ASSIGNMENT",
+      "FOR GOOD AND VALUABLE CONSIDERATION,",
+      "I, ___________________________________ (Name of ASSIGNOR), being the only and original inventor, have agreed and hereby agree to assign for good and valuable consideration, receipt of which is hereby expressly acknowledged, and do hereby sell, assign and transfer unto"
     ],
     "page4": [
+      "NORTH CAROLINA CENTRAL UNIVERSITY (the “ASSIGNEE”) whose principal place of business is at 1801 Fayetteville Street, Durham, North Carolina 27707 and its successors, assigns and legal representatives, the entire right, title and interest, for all countries in and to the inventions relating to the",
+      "____________________________________________________________ (Title of Invention)",
+      "described in the ___________________________________ (e.g., Invention Disclosure Form or Patent Application, etc.) dated _________________________ (date) and to any invention(s) and improvement(s) set forth in said ___________________________________ (e.g., Invention Disclosure Form or Patent Application, etc.), and any and all applications, continuations, continuations-in-part, divisionals, and renewals of and substitutes for Letters Patent for said invention(s) and improvement(s), and all the rights and privileges under any and all Letters Patent that may be granted therefor in any country, and any reissues, or reexaminations, or extensions of said Letters Patent.  I request that any and all Letters Patent for said inventions and improvements be issued to said Assignee, its successors, assigns and legal representatives, or to such nominees as it may designate.",
+      "I agree that, when requested, I will, without charge to said Assignee, sign all papers, take all rightful oaths, and do all acts which may be necessary, desirable or convenient for securing and maintaining patents for said inventions in any and all countries and for vesting title thereto in said Assignee, its successors, assigns and legal representatives or nominees.",
+      "I authorize and empower the said ASSIGNEE, its successors, assigns and legal representatives or nominees, to invoke and claim for any application for patent or other form of protection for said inventions and improvements filed by it or them, the benefit of the right of priority provided by the International Convention for the Protection of Industrial Property, as amended, or by any convention which may henceforth be substituted for it, and to invoke and claim such right of priority without further written or oral authorization from us.",
       "I hereby consent that a copy of this assignment shall be deemed a full legal and formal equivalent of any assignment, consent to file or like document which may be required in any country for any purpose and more particularly in proof of the right of said Assignee or nominee to claim the aforesaid benefit of the right of priority provided by any international treaty or convention which may henceforth be substituted for it.",
       "I covenant with said Assignee, its successors, assigns and legal representatives, that the rights and property herein conveyed are free and clear of any encumbrance, and that I have full right to convey the same as herein expressed.",
       "IN WITNESS WHEREOF, I have hereunto signed my name on this ______ day of ________________________, 20_____.",
@@ -303,7 +482,7 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
     ]
   },
   "nda-template": {
-    "page2": [
+    "page1": [
       "NON-DISCLOSURE AGREEMENT (NDA)",
       "This Non-Disclosure Agreement (hereinafter referred to as the “Agreement”) is made and executed on this ___ day of __________, 2026.",
       "BY AND BETWEEN:",
@@ -324,13 +503,13 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
       "Confidential Information shall also include all records, documents, and files concerning the Company, including information disclosed by the Company as well as any information developed, learned, compiled, or derived by the Receiving Party during the course of their engagement. Such information shall be broadly interpreted to include all information which has or could have commercial value or utility in the business of the Company, whether or not such information is specifically identified as confidential.",
       "Confidential Information includes, without limitation, current and future product plans and specifications, technology, algorithms, prototypes, data, methods, processes, developments, designs, inventions, techniques, know-how, details of customers and business contacts, vendor information, business models, business plans, business processes, marketing and sales information, costs, resources, tools used, and all derivatives, improvements, analyses, compilations, or materials based on the foregoing.",
       "The terms and existence of this Agreement shall also constitute Confidential Information.",
-      "Obligation of Confidentiality"
-    ],
-    "page3": [
+      "Obligation of Confidentiality",
       "The Receiving Party agrees and undertakes to:",
       "a) Maintain strict confidentiality of all Confidential Information;",
       "b) Not disclose, publish, transmit, or otherwise make available any Confidential Information, in whole or in part, to any third party without the prior written consent of the Company;",
-      "c) Use the Confidential Information solely for the purpose of performing duties or for the permitted purpose under this Agreement and for no other purpose whatsoever;",
+      "c) Use the Confidential Information solely for the purpose of performing duties or for the permitted purpose under this Agreement and for no other purpose whatsoever;"
+    ],
+    "page2": [
       "d) Exercise reasonable care and take all necessary precautions to prevent unauthorized access, use, disclosure, or loss of Confidential Information.",
       "Ownership and Control",
       "All Confidential Information shall remain the sole and exclusive property of the Company. Nothing contained in this Agreement shall be construed as granting the Receiving Party any rights, title, or interest in or to such Confidential Information.",
@@ -355,9 +534,49 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
       "The Receiving Party shall promptly disclose in writing to the Company all Work Product, works, contributions, inventions, discoveries, designs, innovations, creations, developments, improvements, works of authorship, ideas, processes, techniques, know-how, and data (whether or not patentable or at a commercial stage) that are conceived, created, developed, learned, or reduced to practice during the course of their engagement.",
       "The Receiving Party further agrees to execute all documents and provide all reasonable assistance, both during and after the term of this Agreement, as may be required to vest, perfect, or enforce the Company’s rights in such Work Product.",
       "Materials and Company Property",
-      "All materials, including but not limited to documents, drawings, drafts, notes, designs, computer media, electronic files, and any additions, modifications, or revisions thereto (collectively, “Materials”), which are provided by the Company or developed during the course of the engagement, or which relate to the Work Product, shall remain the sole property of the Company."
+      "All materials, including but not limited to documents, drawings, drafts, notes, designs, computer media, electronic files, and any additions, modifications, or revisions thereto (collectively, “Materials”), which are provided by the Company or developed during the course of the engagement, or which relate to the Work Product, shall remain the sole property of the Company.",
+      "Such Materials shall be returned to the Company promptly upon request and, in any event, upon termination or expiry of the engagement. The Receiving Party shall retain no copies thereof and shall have no rights in such Materials except as necessary for the performance of their obligations under this Agreement.",
+      "Moral Rights Waiver",
+      "To the extent permitted under applicable law, the Receiving Party hereby waives any and all moral rights or similar rights in relation to the Work Product in favor of the Company.",
+      "Exclusion of Independent Work",
+      "Any intellectual property developed independently by the Receiving Party, without the use of the Company’s resources, confidential information, or support, and which is not related to the Company’s business or anticipated research and development, shall remain the sole property of the Receiving Party."
+    ],
+    "page3": [
+      "No Implied Rights",
+      "Nothing contained in this Agreement shall be construed as granting the Receiving Party any license, right, or interest in respect of the Company’s existing intellectual property, except as strictly necessary for the performance of duties under this Agreement.",
+      "PERMITTED USE AND RESTRICTIONS",
+      "Permitted Purpose",
+      "The Receiving Party agrees that all Confidential Information disclosed under this Agreement shall be used solely for the purpose for which such information has been disclosed by the Company and for no other purpose whatsoever. The Receiving Party shall not use such Confidential Information for any personal, commercial, or competitive advantage, or in any manner that is detrimental to the interests of the Company.",
+      "Restriction on Disclosure",
+      "The Receiving Party shall not disclose, publish, transmit, or otherwise make available any Confidential Information, in whole or in part, to any third party without the prior written consent of the Company, except where such disclosure is strictly required by applicable law or regulatory authority. In such cases, the Receiving Party shall, to the extent legally permissible, provide prompt written notice to the Company to enable it to seek appropriate protective measures.",
+      "Standard of Care",
+      "The Receiving Party shall exercise a degree of care in protecting the Confidential Information that is at least equal to the care it uses to protect its own confidential information of a similar nature, and in any event, not less than a reasonable standard of care, to prevent unauthorized access, use, or disclosure.",
+      "DATA PROTECTION AND PRIVACY",
+      "Acknowledgment and Scope",
+      "The Receiving Party acknowledges that, in the course of their engagement, they may have access to personal data, sensitive personal data, confidential information, and sensitive business data relating to the Company, its clients, employees, vendors, or partners (“Data”). The Receiving Party agrees to handle, process, and use such Data strictly in accordance with applicable laws, including all rules framed thereunder, as well as any applicable data protection laws in India, and the Company’s internal policies, standards, and guidelines, solely for legitimate business purposes of the Company.",
+      "Obligations of the Receiving Party",
+      "The Receiving Party hereby agrees to:",
+      "a) Access, use, and process Data only for legitimate purposes directly related to the performance of assigned duties and not beyond what is strictly necessary;",
+      "b) Not collect, copy, store, transfer, or process any Data outside the Company’s authorized systems or share the same with any third party without prior written consent of the Company;",
+      "c) Implement and maintain all reasonable and necessary technical and organizational safeguards to protect Data against unauthorized access, disclosure, alteration, loss, misuse, or destruction;",
+      "d) Maintain strict confidentiality of all Data at all times;",
+      "e) Promptly notify the Company of any actual, suspected, or potential data breach, security incident, or unauthorized access involving Data.",
+      "Return and Deletion of Data",
+      "Upon termination or completion of the engagement, or upon request by the Company at any time, the Receiving Party shall immediately cease all use of Data and shall promptly return or securely delete all Data and related materials (including any copies, whether in physical or electronic form) in their possession, custody, or control. The Receiving Party shall not retain any copies thereof and shall, if required, provide written certification confirming such deletion.",
+      "Compliance and Liability",
+      "The Receiving Party agrees to comply with all applicable data protection and privacy laws. Any breach of this Clause shall be treated as a material breach of this Agreement and may result in immediate termination of the engagement and such legal action as may be deemed appropriate by the Company.",
+      "Survival of Obligations",
+      "The obligations under this Clause shall survive the termination or expiry of this Agreement and shall continue for so long as the Data remains confidential or protected under applicable law.",
+      "NON-SOLICITATION",
+      "During the Term of this Agreement and for a period of first (1) year after the termination of this Agreement, the Employee agrees not to solicit any employee, consultant, client or other persons of the Employer, without the Employer’s prior written consent. Furthermore, the employee, in any way, directly or indirectly, will not interfere with any client or business counterparties or prospective clients.",
+      "NON-CIRCUMVENTION",
+      "The Receiving Party agrees that it shall not, directly or indirectly, contact, engage, solicit, or enter into any business relationship with any clients, customers, vendors, investors, or business associates of the Company that were introduced to or became known to the Receiving Party during the course of its engagement with the Company, without the prior written consent of the Company. This restriction shall apply during the term of this Agreement and for a period of first (1) year thereafter. This obligation is independent of and in addition to the confidentiality obligations under this Agreement.",
+      "HANDLING, STORAGE, AND SECURITY OF INFORMATION"
     ],
     "page4": [
+      "Entire Agreement",
+      "This Agreement constitutes the entire understanding between the Parties with respect to its subject matter and supersedes all prior discussions, negotiations, or agreements.",
+      "Amendments",
       "No amendment or modification of this Agreement shall be valid unless made in writing and signed by both Parties.",
       "Severability",
       "If any provision of this Agreement is held to be invalid or unenforceable, the remaining provisions shall continue in full force and effect.",
@@ -373,7 +592,7 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
     ]
   },
   "offer-letter-template": {
-    "page2": [
+    "page1": [
       "OFFER LETTER",
       "Date:",
       "Dear _____________________,",
@@ -385,13 +604,13 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
       "Duration: 6 Months",
       "Type: Internship (Unpaid)",
       "Key Responsibilities:",
-      "Conduct legal research on various areas of law and provide concise summaries.",
+      "Conduct legal research on various areas of law and provide concise summaries."
+    ],
+    "page2": [
       "Draft legal documents, briefs, notices, and agreements as required.",
       "Assist in preparing case notes and legal opinions.",
       "Support the team in client-related work, including reaching out to potential leads and maintaining communication.",
-      "Work on preparing structured legal briefs and documentation for internal and external use."
-    ],
-    "page3": [
+      "Work on preparing structured legal briefs and documentation for internal and external use.",
       "Contribute to content development, including legal articles, compliance guides, and knowledge resources.",
       "Stipend & Benefits:",
       "This is an unpaid internship.",
@@ -399,7 +618,9 @@ export const TEMPLATE_PREVIEWS: Record<string, TemplatePreviewText> = {
       "Outstanding performance during the internship may lead to future opportunities or performance-based incentives, at the sole discretion of the organization.",
       "Terms & Conditions:",
       "Your engagement with Turn2Law will be governed by the policies and guidelines of the organization.",
-      "You are expected to maintain professionalism, confidentiality, and adhere to deadlines.",
+      "You are expected to maintain professionalism, confidentiality, and adhere to deadlines."
+    ],
+    "page3": [
       "All work, research, drafts, and deliverables created during your internship shall be the intellectual property of Turn2Law.",
       "This internship does not constitute an employment relationship.",
       "Please confirm your acceptance of this offer by signing in the space provided below.",

@@ -391,39 +391,49 @@ export function TemplateDetailClient({ template, relatedTemplates }: TemplateDet
                   className="flex-1 bg-[#F5F3EF] overflow-y-auto p-4 space-y-4 relative scroll-smooth"
                 >
                   
-                  {/* PAGE 1: Branded Title Page */}
+                  {/* PAGE 1: Dynamic Content Page 1 */}
                   <div
                     id="preview-page-1"
-                    className="aspect-[1/1.4] w-full bg-white shadow-md border border-[#E8E4DC] p-6 text-center flex flex-col justify-between select-none relative"
+                    className="aspect-[1/1.4] w-full bg-white shadow-md border border-[#E8E4DC] p-6 text-left flex flex-col justify-between select-none text-[7px] text-[#333] leading-relaxed"
                   >
-                    <div className="text-[9px] text-[#C89A4B] font-bold tracking-widest uppercase">
-                      Turn2Law Legal Templates
-                    </div>
-                    
-                    <div className="my-auto space-y-4">
-                      <div className="w-10 h-1 bg-[#C89A4B] mx-auto" />
-                      <h4 className="text-sm font-bold uppercase text-[#111] leading-tight px-2">
-                        {template.title}
-                      </h4>
-                      <p className="text-[9px] text-[#666] tracking-wide">
-                        {template.category?.name} Agreement
-                      </p>
-                      
-                      <div className="pt-6 text-left max-w-[150px] mx-auto space-y-1.5 text-[8px] text-[#555] border-t border-[#FAFAF8]">
-                        <div><strong className="text-[#888]">Template ID:</strong> {template.template_number}</div>
-                        <div><strong className="text-[#888]">Version:</strong> {template.version}</div>
-                        <div><strong className="text-[#888]">Revision Date:</strong> {template.revision_date}</div>
-                        <div><strong className="text-[#888]">Prepared By:</strong> Turn2Law Legal</div>
-                      </div>
+                    <div className="flex justify-between border-b border-[#F0EBE1] pb-1.5 text-[6px] text-[#888] font-semibold shrink-0">
+                      <span>{template.title}</span>
+                      <span>{template.template_number}</span>
                     </div>
 
-                    <div className="border-t border-[#F0EBE1] pt-3">
-                      <span className="text-[7px] text-[#999] uppercase tracking-wider block font-bold mb-1">
-                        CONFIDENTIALITY NOTICE
-                      </span>
-                      <p className="text-[6px] text-[#AAA] leading-normal italic px-2">
-                        CONFIDENTIAL — This document is a template provided by Turn2Law for informational purposes. Consult qualified legal counsel before use.
-                      </p>
+                    <div className="flex-1 py-2 overflow-y-auto space-y-1.5 scrollbar-none">
+                      {previewData.page1.map((para, idx) => {
+                        const trimmed = para.trim();
+                        // Header detection
+                        if (trimmed.length < 80 && (
+                          trimmed === trimmed.toUpperCase() || 
+                          /^\d+\.\s+[A-Z]/.test(trimmed) || 
+                          /^[A-Z\s&,\-\(\):]+$/.test(trimmed) && trimmed.length > 3
+                        )) {
+                          return (
+                            <div key={idx} className="font-bold text-[#111] mt-2 mb-0.5 text-[7.5px] uppercase tracking-wide">
+                              {trimmed}
+                            </div>
+                          );
+                        }
+                        // List item detection
+                        if (/^\([a-z\d]\)\s+/.test(trimmed) || /^-\s+/.test(trimmed) || /^\d+\.\d+\s+/.test(trimmed) || /^[a-z]\.\s+/.test(trimmed)) {
+                          return (
+                            <p key={idx} className="pl-3 mt-0.5 text-[6.5px] text-[#444] leading-normal">
+                              {trimmed}
+                            </p>
+                          );
+                        }
+                        return (
+                          <p key={idx} className="mt-1 text-[6.5px] leading-relaxed text-[#444]">
+                            {trimmed}
+                          </p>
+                        );
+                      })}
+                    </div>
+
+                    <div className="border-t border-[#F0EBE1] pt-1.5 text-center text-[6px] text-[#888] shrink-0">
+                      Page 1 of 4
                     </div>
                   </div>
 
