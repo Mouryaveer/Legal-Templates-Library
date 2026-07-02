@@ -113,10 +113,10 @@ export function TemplateDetailClient({ template, relatedTemplates }: TemplateDet
         </div>
 
         {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           
-          {/* Left Columns (Content details) */}
-          <div className="lg:col-span-2 space-y-8">
+          {/* Left Column (Content details) */}
+          <div className="lg:col-span-1 space-y-8">
             
             {/* Header Block */}
             <div className="bg-white p-6 sm:p-10 rounded-2xl border border-[#E8E4DC] shadow-sm">
@@ -302,47 +302,46 @@ export function TemplateDetailClient({ template, relatedTemplates }: TemplateDet
           {/* Right Column (Sticky Download / Preview Panel) */}
           <div className="space-y-6 lg:sticky lg:top-24">
             
-            {/* Quick Actions Panel */}
-            <div className="bg-white border border-[#E8E4DC] p-6 rounded-2xl shadow-sm text-center">
-              <div className="w-14 h-14 bg-gradient-to-br from-[#FBF7F0] to-[#F0EBE1] rounded-2xl flex items-center justify-center mx-auto mb-4 border border-[#E8D5B0]">
-                <FileText className="w-7 h-7 text-[#C89A4B]" />
+            {/* Side by Side: Download Panel & Premium CTA */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* Quick Actions Panel */}
+              <div className="bg-white border border-[#E8E4DC] p-5 rounded-2xl shadow-sm text-center flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#FBF7F0] to-[#F0EBE1] rounded-xl flex items-center justify-center mx-auto mb-3 border border-[#E8D5B0]">
+                    <FileText className="w-6 h-6 text-[#C89A4B]" />
+                  </div>
+                  <h3 className="text-base font-bold text-[#111] mb-1">Download Template</h3>
+                  <p className="text-xs text-[#888] mb-4 leading-relaxed">
+                    Fully editable corporate format (Microsoft Word)
+                  </p>
+                </div>
+                
+                <Button
+                  onClick={handleDownloadClick}
+                  className="w-full h-10 bg-[#111] hover:bg-[#C89A4B] text-white rounded-xl text-xs font-semibold transition-all duration-300 flex items-center justify-center gap-2 shadow-md border-none cursor-pointer"
+                >
+                  <Download className="w-4 h-4" />
+                  Free Download (DOCX)
+                </Button>
               </div>
-              <h3 className="text-lg font-bold text-[#111] mb-1">Download Template</h3>
-              <p className="text-xs text-[#888] mb-6">
-                Fully editable corporate format (Microsoft Word)
-              </p>
-              
-              <Button
-                onClick={handleDownloadClick}
-                className="w-full h-12 bg-[#111] hover:bg-[#C89A4B] text-white rounded-xl text-base font-semibold transition-all duration-300 flex items-center justify-center gap-2 mb-3 shadow-md border-none cursor-pointer"
-              >
-                <Download className="w-5 h-5" />
-                Free Download (DOCX)
-              </Button>
 
-              <div className="flex items-center justify-center gap-4 text-xs text-[#888] mt-4">
-                <span>Downloads: <strong>{template.download_count.toLocaleString()}+</strong></span>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#E8E4DC]" />
-                <span>Format: <strong>DOCX Word</strong></span>
-              </div>
-            </div>
-
-            {/* Premium CTA */}
-            <div className="bg-[#111] text-white p-6 rounded-2xl border border-white/5 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#C89A4B] rounded-full blur-[80px] opacity-10" />
-              <div className="relative z-10">
-                <Badge className="bg-[#C89A4B] text-white border-none font-semibold mb-3 text-[10px] tracking-wide">
-                  PREMIUM
-                </Badge>
-                <h4 className="text-base font-bold mb-2">Need a custom contract?</h4>
-                <p className="text-xs text-[#888] leading-relaxed mb-6">
-                  Get custom parameters, automated variables, and lawyer-approved configurations using Turn2Law DocEngine.
-                </p>
+              {/* Premium CTA */}
+              <div className="bg-[#111] text-white p-5 rounded-2xl border border-white/5 relative overflow-hidden flex flex-col justify-between">
+                <div className="absolute top-0 right-0 w-20 h-20 bg-[#C89A4B] rounded-full blur-[50px] opacity-10" />
+                <div className="relative z-10">
+                  <Badge className="bg-[#C89A4B] text-white border-none font-semibold mb-2 text-[10px] tracking-wide">
+                    PREMIUM
+                  </Badge>
+                  <h4 className="text-sm font-bold mb-2">Need a custom contract?</h4>
+                  <p className="text-xs text-[#888] leading-relaxed mb-4">
+                    Get custom parameters, automated variables, and lawyer-approved configurations using Turn2Law DocEngine.
+                  </p>
+                </div>
                 <a
                   href="https://turn2law.com/docengine"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center justify-center gap-1.5 w-full py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl border border-white/15 text-xs font-semibold transition-all"
+                  className="group inline-flex items-center justify-center gap-1.5 w-full py-2.5 bg-white/5 hover:bg-white/10 text-white rounded-xl border border-white/15 text-xs font-semibold transition-all"
                 >
                   Create Custom Contract
                   <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />

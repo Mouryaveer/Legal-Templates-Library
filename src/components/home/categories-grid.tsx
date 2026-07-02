@@ -27,34 +27,96 @@ export function CategoriesGrid() {
           </p>
         </ScrollReveal>
 
-        <StaggerReveal className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
-          {CATEGORIES.map((category) => {
-            const Icon = iconMap[category.icon] || Scale;
-            return (
-              <StaggerItem key={category.slug}>
-                <Link href={`/categories/${category.slug}`}>
-                  <motion.div
-                    className="group relative overflow-hidden rounded-2xl border border-[#E8E4DC] bg-white p-6 transition-all duration-300 hover:border-[#C89A4B]/40 hover:shadow-[0_4px_24px_rgba(200,154,75,0.08)]"
-                    whileHover={{ y: -4 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FBF7F0] to-[#F0EBE1] flex items-center justify-center mb-4 group-hover:from-[#C89A4B]/10 group-hover:to-[#C89A4B]/5 transition-all duration-300">
-                      <Icon className="w-6 h-6 text-[#C89A4B]" />
+        {/* Mobile: Scrolling marquee rows - Desktop: Grid */}
+        <div className="hidden sm:block">
+          <StaggerReveal className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-6">
+            {CATEGORIES.map((category) => {
+              const Icon = iconMap[category.icon] || Scale;
+              return (
+                <StaggerItem key={category.slug}>
+                  <Link href={`/categories/${category.slug}`}>
+                    <motion.div
+                      className="group relative overflow-hidden rounded-2xl border border-[#E8E4DC] bg-white p-6 transition-all duration-300 hover:border-[#C89A4B]/40 hover:shadow-[0_4px_24px_rgba(200,154,75,0.08)]"
+                      whileHover={{ y: -4 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#FBF7F0] to-[#F0EBE1] flex items-center justify-center mb-4 group-hover:from-[#C89A4B]/10 group-hover:to-[#C89A4B]/5 transition-all duration-300">
+                        <Icon className="w-6 h-6 text-[#C89A4B]" />
+                      </div>
+                      <h3 className="text-sm font-semibold text-[#111] mb-1 group-hover:text-[#C89A4B] transition-colors duration-300">
+                        {category.name}
+                      </h3>
+                      <p className="text-xs text-[#999] line-clamp-2">
+                        {category.description}
+                      </p>
+                      {/* Bottom accent */}
+                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#C89A4B] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    </motion.div>
+                  </Link>
+                </StaggerItem>
+              );
+            })}
+          </StaggerReveal>
+        </div>
+
+        {/* Mobile Scrolling Marquee */}
+        <div className="sm:hidden space-y-4">
+          {/* Row 1: Scroll Left */}
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-3"
+              animate={{ x: [0, -1000] }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            >
+              {[...CATEGORIES.slice(0, 6), ...CATEGORIES.slice(0, 6)].map((category, index) => {
+                const Icon = iconMap[category.icon] || Scale;
+                return (
+                  <Link key={`${category.slug}-${index}`} href={`/categories/${category.slug}`} className="flex-shrink-0 w-[140px]">
+                    <div className="group relative overflow-hidden rounded-xl border border-[#E8E4DC] bg-white p-4 transition-all duration-300 hover:border-[#C89A4B]/40">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#FBF7F0] to-[#F0EBE1] flex items-center justify-center mb-3">
+                        <Icon className="w-5 h-5 text-[#C89A4B]" />
+                      </div>
+                      <h3 className="text-xs font-semibold text-[#111] mb-1 group-hover:text-[#C89A4B] transition-colors">
+                        {category.name}
+                      </h3>
+                      <p className="text-[10px] text-[#999] line-clamp-2">
+                        {category.description}
+                      </p>
                     </div>
-                    <h3 className="text-sm font-semibold text-[#111] mb-1 group-hover:text-[#C89A4B] transition-colors duration-300">
-                      {category.name}
-                    </h3>
-                    <p className="text-xs text-[#999] line-clamp-2">
-                      {category.description}
-                    </p>
-                    {/* Bottom accent */}
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-[#C89A4B] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  </motion.div>
-                </Link>
-              </StaggerItem>
-            );
-          })}
-        </StaggerReveal>
+                  </Link>
+                );
+              })}
+            </motion.div>
+          </div>
+
+          {/* Row 2: Scroll Right */}
+          <div className="relative overflow-hidden">
+            <motion.div
+              className="flex gap-3"
+              animate={{ x: [-1000, 0] }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+            >
+              {[...CATEGORIES.slice(6), ...CATEGORIES.slice(6)].map((category, index) => {
+                const Icon = iconMap[category.icon] || Scale;
+                return (
+                  <Link key={`${category.slug}-${index}`} href={`/categories/${category.slug}`} className="flex-shrink-0 w-[140px]">
+                    <div className="group relative overflow-hidden rounded-xl border border-[#E8E4DC] bg-white p-4 transition-all duration-300 hover:border-[#C89A4B]/40">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#FBF7F0] to-[#F0EBE1] flex items-center justify-center mb-3">
+                        <Icon className="w-5 h-5 text-[#C89A4B]" />
+                      </div>
+                      <h3 className="text-xs font-semibold text-[#111] mb-1 group-hover:text-[#C89A4B] transition-colors">
+                        {category.name}
+                      </h3>
+                      <p className="text-[10px] text-[#999] line-clamp-2">
+                        {category.description}
+                      </p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
